@@ -1,0 +1,13 @@
+
+.main_location {
+    margin-top: 20%;
+    margin-left: 47%;
+}
+
+.dropdown_search {
+    display: none;
+    height: fit-content;
+    width: fit-content;
+    max-width: 7cm;
+    z-index: -1;
+}
