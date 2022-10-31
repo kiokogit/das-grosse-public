@@ -1,7 +1,10 @@
 
-.main_location {
-    margin-top: 20%;
-    margin-left: 47%;
+.main_window {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    margin-bottom:10%;
 }
 
 .dropdown_search {
@@ -10,4 +13,9 @@
     width: fit-content;
     max-width: 7cm;
     z-index: -1;
+}
+
+.minor_window {
+    text-align: center;
+    justify-content: center;
 }

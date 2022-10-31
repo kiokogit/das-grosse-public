@@ -1,0 +1,13 @@
+
+
+.input {
+    padding:4px;
+    height:1.5rem;
+    min-width: 95%;
+    max-width: 98%;
+    font-size: 0.9rem;
+}
+
+.margin_around {
+    margin:1rem;
+}

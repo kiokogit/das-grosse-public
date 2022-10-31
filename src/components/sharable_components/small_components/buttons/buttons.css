@@ -1,0 +1,39 @@
+
+.btn{
+    width:fit-content;
+    min-width: none;
+    padding:4px;
+    border: 1px black solid;
+    border-radius: 4px;
+    font-variant: small-caps;
+    margin:5px;
+    height:1.8rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.submit_btn {
+    background-color: rgb(157, 131, 81);
+    color: white;
+}
+
+.cancel_btn {
+    background-color:rgb(185, 181, 181);
+    color: black;
+}
+
+.close_btn {
+    background-color: rgb(70, 3, 3);
+    border-radius: 50%;
+    border: 2px white solid;
+    color:black;
+}
+
+.invisible_btn {
+    color:black;
+    border:none;
+    background-color: inherit;
+}
