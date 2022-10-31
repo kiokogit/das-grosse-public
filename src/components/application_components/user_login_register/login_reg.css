@@ -1,0 +1,19 @@
+
+.full_window {
+    width:100%;
+    justify-content: center;
+    display:flex;
+    height:100%;
+    margin-top: 10%;
+}
+
+.center_all {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.invisible_btn {
+    border: none;
+    
+}

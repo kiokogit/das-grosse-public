@@ -9,8 +9,7 @@ export const Router = () =>{
         <Routing>
             <Routes>
                 <Route path="/public_landing" element={<Landing />}/>
-                <Route path="/login" element={<LoginRegister mode='login'/>} />
-                <Route path="/register" element={<LoginRegister mode='register'/>} />
+                <Route path="/user_account" element={<LoginRegister/>} />
             </Routes>
         </Routing>
     )
