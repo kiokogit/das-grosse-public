@@ -1,24 +1,29 @@
+import { InvisibleBtn } from "../../sharable_components/small_components/buttons/buttons"
 import { PackageMiniCard } from "../package_mini_card/package_card"
 
 import './package.css'
-export const PackageManyCards = () =>{
+
+
+export const PackageManyCards = ({packages=[]}) =>{
 
     return (
         <div>
-            <div className="flex_row">
+            <div className="flexrow">
+                <div>PACKAGE TITLE</div>
                 <div>
-                    Arrow left
+                    {packages.length > 6 && 'Arrow left'}
                 </div>
-                <PackageMiniCard />
-                <PackageMiniCard />
-                <PackageMiniCard />
-                <PackageMiniCard />
-                <PackageMiniCard />
-                <PackageMiniCard />
                 <div>
-                    view all button
+                    {packages.length >0 && 
+                        packages.map(pack => 
+                            <PackageMiniCard pack={pack} />
+                            )
+                        }
+                </div>
+                <div>
+                        <InvisibleBtn switchValue={'View All'} />
                     <div>
-                        Arrow right
+                        {packages.length > 6 && 'Arrow Right'}
                     </div>
                 </div>
             </div>

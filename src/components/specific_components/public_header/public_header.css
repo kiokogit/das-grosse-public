@@ -7,7 +7,7 @@
     padding-right: 0.3cm;
 }
 
-.flex_row {
+.flexrow {
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -39,13 +39,9 @@
 #company_name{
     font-size: large;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-stretch:expanded;
+    font-weight: 700;
+    letter-spacing: 7px;
     align-items: center;
     justify-self: center;
     color:white;
-}
-
-.titles_{
-    font-weight: bold;
-    /* font-size: small; */
 }

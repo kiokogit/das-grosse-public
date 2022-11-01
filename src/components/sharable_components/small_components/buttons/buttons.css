@@ -37,3 +37,14 @@
     border:none;
     background-color: inherit;
 }
+
+.menu_btn {
+    color:black;
+    border:none;
+    background:transparent;
+    font-size: medium;
+    font-variant: normal;
+    font-weight:900;
+    margin: 0px;
+    font-family:inherit;
+}
