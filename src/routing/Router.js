@@ -8,7 +8,7 @@ export const Router = () =>{
     return (
         <Routing>
             <Routes>
-                <Route path="/public_landing" element={<Landing />}/>
+                <Route path="public_landing/" element={<Landing />}/>
                 <Route path="/user_account" element={<LoginRegister/>} />
             </Routes>
         </Routing>

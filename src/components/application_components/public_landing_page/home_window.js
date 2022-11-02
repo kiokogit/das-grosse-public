@@ -6,7 +6,7 @@ const packagess = [
         "title":"Maasai Tour",
         "price":"USD 2522",
         "description":"The toour to all places before the end of the day",
-        "cover_image":"None"
+        // "cover_image":"None"
     }
 ]
 

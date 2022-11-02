@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Footer } from "../../specific_components/footer/Footer"
 import { MainBody } from "../../specific_components/main_body/main_body"
 import { PublicHeader } from "../../specific_components/public_header/public_header"
@@ -14,18 +14,22 @@ import './landing.css'
 
 export const Landing = () =>{
     // set the current window
-    const [window, setWindow] = useState('home')
+    const [windows, setWindow] = useState('Home')
+    useEffect(()=>{
+        // let objState = {id:300}
+        window.history.replaceState("", windows, `${windows.replace(" ","")}`)
+    }, [windows])
 
     return (
         <div className="main_component">
             <PublicHeader setWindow={setWindow}/>
             <MainBody>
-                {window==='Home' && <Home />}
-                {window==='About Us' && <AboutUs />}
-                {window==='Booking' && <Booking />}
-                {window==='Journey Planner' && <JourneyPlanner />}
-                {window==='Packages' && <Packages />}
-                {window==='Contact Us' && <ContactUs />}
+                {windows==='Home' && <Home />}
+                {windows==='About Us' && <AboutUs />}
+                {windows==='Booking' && <Booking />}
+                {windows==='Journey Planner' && <JourneyPlanner />}
+                {windows==='Packages' && <Packages />}
+                {windows==='Contact Us' && <ContactUs />}
             </MainBody>
             <Footer />
         </div>
