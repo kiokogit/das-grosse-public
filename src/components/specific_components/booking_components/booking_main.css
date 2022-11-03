@@ -1,0 +1,25 @@
+
+.whole_page {
+    width:100%;
+    justify-content: center;
+    display:flex;
+    height:100%;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.booking_container {
+    width:85%;
+    min-height: max-content;
+    border: 1px  rgb(157, 131, 81) solid;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.flex_space_between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

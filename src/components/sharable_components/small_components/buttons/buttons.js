@@ -42,3 +42,11 @@ export const InvisibleBtn2 = ({value, onClick, className}) => {
         </button>
     )
 }
+
+export const RadioBtn = ({value, onClick, className}) => {
+    return (
+        <button type='radio' className={`btn ${className}`} onClick={onClick} value={value}>
+            {value}
+        </button>
+    )
+}

@@ -1,0 +1,28 @@
+
+.column_grids_partition {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width: 95%;
+}
+
+.border_left {
+    border-left: 1px solid rgb(157, 131, 81);
+}
+.border_right {
+    border-left: 1px solid rgb(157, 131, 81);
+}
+
+.spacing_between_elements {
+    margin-top: 2rem;
+}
+
+.flex_close_by {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    width:60%;
+}
+
+.align_all_left {
+    text-align: left;
+}

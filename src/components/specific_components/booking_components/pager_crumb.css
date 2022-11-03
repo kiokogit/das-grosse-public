@@ -1,0 +1,51 @@
+
+.flex_row_crumbs {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    min-height:max-content;
+    font-size: 80%;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+
+.page_number {
+    border: 0.2px solid black;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width:2rem;
+    height:2rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    justify-items: center;
+    text-align: center;
+}
+
+.enabled_page {
+    opacity:100%;
+    color: rgb(157, 131, 81);
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.disabled_page {
+    opacity: 50%;
+    color:black;
+    cursor:pointer;
+}
+
+.enabled_page .page_number {
+    border: rgb(157, 131, 81) 4px solid;
+}
+
+hr {
+    width: 10rem;
+    height: 0.1px
+}
