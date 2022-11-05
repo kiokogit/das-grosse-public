@@ -1,4 +1,8 @@
 
+.search_complete{
+    position:relative;
+}
+
 .search_input{
     min-width: none;
     padding:4px;
@@ -8,7 +12,7 @@
 }
 
 .search_container {
-    border: 0.5px rgb(48, 47, 47) solid;
+    border: 0.2px rgb(157, 131, 81) solid;
     border-radius: 15px;
     width:400px;
     padding-left:5px
@@ -17,4 +21,26 @@
 .search_input:focus {
     border: none;
     outline: none;
+}
+
+.search_results_card {
+    width: 100%;
+    height:max-content;
+    padding:4px;
+    border: 0.2px solid  rgb(157, 131, 81);
+    border-top: none;
+    border-radius: 10px;
+    align-self: center;
+    text-align: left;
+    font-size: small;
+    background-color: white;
+}
+
+.float_card {
+    position:absolute;
+    top:3rem;
+}
+
+.hidden {
+    display: none;
 }

@@ -21,17 +21,22 @@ export const Landing = () =>{
     }, [windows])
 
     return (
-        <div className="main_component">
-            <PublicHeader setWindow={setWindow}/>
-            <MainBody>
-                {windows==='Home' && <Home />}
-                {windows==='About Us' && <AboutUs />}
-                {windows==='Booking' && <Booking />}
-                {windows==='Journey Planner' && <JourneyPlanner />}
-                {windows==='Packages' && <Packages />}
-                {windows==='Contact Us' && <ContactUs />}
-            </MainBody>
-            <Footer />
+        <div className="main_component display_row_grids">
+            <div className="main_content_container">
+                <PublicHeader setWindow={setWindow}/>
+                <MainBody>
+                    {windows==='Home' && <Home />}
+                    {windows==='About Us' && <AboutUs />}
+                    {windows==='Booking' && <Booking />}
+                    {windows==='Journey Planner' && <JourneyPlanner />}
+                    {windows==='Packages' && <Packages />}
+                    {windows==='Contact Us' && <ContactUs />}
+                </MainBody>
+            </div>
+            <div className="footer_sticky">
+                <Footer />  
+
+            </div>
         </div>
     )
 }

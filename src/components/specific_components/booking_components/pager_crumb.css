@@ -45,7 +45,7 @@
     border: rgb(157, 131, 81) 4px solid;
 }
 
-hr {
+.hr {
     width: 10rem;
     height: 0.1px
 }

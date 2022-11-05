@@ -13,9 +13,31 @@
 input[type='radio'] {
     accent-color: rgb(157, 131, 81);
 }
+input[type='checkbox'] {
+    accent-color: rgb(157, 131, 81);
+}
 
 .margin_around {
     margin-right:1rem;
+}
+
+input[type='text'] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid  rgb(157, 131, 81);
+}
+input[type='number'] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid  rgb(157, 131, 81);
+}
+input[type='date'] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid  rgb(157, 131, 81);
 }
 
 .display_inline {
@@ -31,4 +53,18 @@ input[type='radio'] {
     min-width: 4rem;
     max-width: 90%;
     font-size: 0.9rem;
+}
+
+.text_area {
+    margin-top: 0.5rem;
+    width: 90%;
+    height:6rem;
+    resize:none;
+    font-family: inherit;
+    border-radius: 4px;
+    border: 1px solid  rgb(157, 131, 81);
+}
+
+.text_area_container{
+    margin-top:2rem
 }
