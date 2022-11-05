@@ -1,22 +1,29 @@
 import './package_card.css'
 
-export const PackageMiniCard = ({card_image, price_tag, description, card_title}) =>{
+export const PackageMiniCard = ({pack}) =>{
 
     return (
         <div className="card_window">
             <div className="card_bordered">
                 <div className="card_image">
-                    {card_image}
+                    {pack.cover_image && 
+                    <img id='coverphoto' src={pack.cover_image} alt='CoverPhoto'/>
+                    }
+                    <div className="card_title">
+                        {pack.title}
+                    </div>
                 </div>
-                <div className="card_title">
-                    {card_title}
+                <div className='flex_row_few'>
+                    <div>
+                        
+                    </div>
+                    <div className="card_price">
+                        {pack.price}
+                    </div>
                 </div>
-                <div className="card_price">
-                    {price_tag}
+                <div className="card_description">
+                    {pack.description}
                 </div>
-            </div>
-            <div className="card_description">
-                {description}
             </div>
         </div>
     )

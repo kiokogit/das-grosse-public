@@ -10,7 +10,7 @@
 .flexrow {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .padding_top {

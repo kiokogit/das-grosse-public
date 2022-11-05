@@ -3,7 +3,7 @@
     width:fit-content;
     min-width: none;
     padding:4px;
-    border: 1px black solid;
+    border: 1px rgb(157, 131, 81);
     border-radius: 4px;
     font-variant: small-caps;
     margin:5px;
@@ -18,6 +18,7 @@
 .submit_btn {
     background-color: rgb(157, 131, 81);
     color: white;
+    min-width: 4rem;
 }
 
 .cancel_btn {
@@ -36,4 +37,15 @@
     color:black;
     border:none;
     background-color: inherit;
+}
+
+.menu_btn {
+    color:black;
+    border:none;
+    background:transparent;
+    font-size: medium;
+    font-variant: normal;
+    font-weight:900;
+    margin: 0px;
+    font-family:inherit;
 }

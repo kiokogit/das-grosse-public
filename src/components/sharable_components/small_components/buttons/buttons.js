@@ -33,3 +33,20 @@ export const InvisibleBtn = ({switchValue, onClick}) => {
         </button>
     )
 }
+
+// invisible 2 - for single page navigation
+export const InvisibleBtn2 = ({value, onClick, className}) => {
+    return (
+        <button className={`btn ${className}`} onClick={onClick} value={value}>
+            {value}
+        </button>
+    )
+}
+
+export const RadioBtn = ({value, onClick, className}) => {
+    return (
+        <button type='radio' className={`btn ${className}`} onClick={onClick} value={value}>
+            {value}
+        </button>
+    )
+}

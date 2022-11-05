@@ -1,13 +1,13 @@
 
-export const PackageList = () =>{
+export const PackageList = ({pack}) =>{
 
     return (
         <div>
             <div>
-                Cover Image
+                {pack.cover_image}
             </div>
             <div>
-                Description info
+                {pack.description}
             </div>
             <div>
                 Add to cart
@@ -16,7 +16,7 @@ export const PackageList = () =>{
                My calculator section
             </div>
             <div>
-                My reviews
+                {pack.reviews}
             </div>
         </div>
     )

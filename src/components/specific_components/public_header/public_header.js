@@ -1,14 +1,17 @@
+import { useEffect, useState } from 'react'
+import { InvisibleBtn2 } from '../../sharable_components/small_components/buttons/buttons';
+
 import './public_header.css'
 
-import { useEffect, useState } from 'react'
 
+export const PublicHeader = ({setWindow}) => {
 
-export const PublicHeader = () => {
+    // real time time
     const [time, setTime] = useState('');
-
     useEffect(()=>{
       setInterval(()=>{ let nwDate = new Date(); setTime(nwDate)}, 1000);
     },[])
+
 
     return(
         <div className='header_body padding_top flex_column' >
@@ -20,25 +23,13 @@ export const PublicHeader = () => {
                     {time.toString()}
                 </div>
             </div>
-            <div className='flex_row titles_'>
-                <div>
-                    Menu
-                </div>
-                <div>
-                    About
-                </div>
-                <div>
-                    Packages
-                </div>
-                <div>
-                    Booking
-                </div>
-                <div>
-                    Journey Planner
-                </div>
-                <div>
-                    Contacts
-                </div>
+            <div className='flexrow'>
+                <InvisibleBtn2 className={'menu_btn'} value='Home' onClick={(e)=>setWindow(e.target.value)}/>
+                <InvisibleBtn2 className={'menu_btn'} value='About Us' onClick={(e)=>setWindow(e.target.value)} />
+                <InvisibleBtn2 className={'menu_btn'} value='Packages' onClick={(e)=>setWindow(e.target.value)} />
+                <InvisibleBtn2 className={'menu_btn'} value='Booking' onClick={(e)=>setWindow(e.target.value)} />
+                <InvisibleBtn2 className={'menu_btn'} value='Journey Planner' onClick={(e)=>setWindow(e.target.value)} />
+                <InvisibleBtn2 className={'menu_btn'} value='Contact Us' onClick={(e)=>setWindow(e.target.value)} />
             </div>
         </div>
     )
