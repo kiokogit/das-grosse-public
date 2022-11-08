@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { Link } from 'react-router-dom'
 
 import { InvisibleBtn } from "../../sharable_components/small_components/buttons/buttons"
 import { Login } from "../../specific_components/login_component/login"
@@ -32,6 +33,11 @@ export const LoginRegister = () => {
                 {mode==='register' && <Register />}
                 {mode==='resetPass' && <ResetPassword />}
                 or <InvisibleBtn switchValue={mode==='login'? 'Register Here':'Login'} onClick={e=>setSwitchValue(e)}/>
+                <div>
+                    <Link to='/'>
+                        <InvisibleBtn switchValue={'Home'} />
+                    </Link>
+                </div>
             </div>
         </div>
     )

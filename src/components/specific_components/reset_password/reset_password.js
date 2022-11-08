@@ -14,7 +14,7 @@ export const ResetPassword = () => {
                 fields= {(
                     <div>
                         <div>
-                            <Input placeholder={'Enter Email Address'} />
+                            <Input placeholder={'Enter Email Address'} type='text'/>
                         </div>
                     </div>
                 )}

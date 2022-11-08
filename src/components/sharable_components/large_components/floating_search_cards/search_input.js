@@ -1,10 +1,8 @@
-import { useState } from "react"
 import { InvisibleBtn } from "../../small_components/buttons/buttons"
 
 import './search_input.css'
 
-export const SearchInput = ({placeholder, search_results=[]}) => {
-    const [searchValue, setSearchValue ] = useState('')
+export const SearchInput = ({placeholder, search_results=[], searchValue, setSearchValue}) => {
 
     return (
         <div className="search_complete">
@@ -18,7 +16,7 @@ export const SearchInput = ({placeholder, search_results=[]}) => {
                 {search_results.length < 1 ? <i>No related search results</i>:
                 <div>
                     {search_results.map(value=>
-                        <li key={value}>{value}</li>
+                        <li key={value}>{value.title}</li>
                         )}
                      </div>
                 }

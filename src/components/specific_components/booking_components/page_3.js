@@ -8,7 +8,7 @@ export const BookingPageThree = ({user}) => {
     return (
         <div>
             <h3>Verify Contact Details</h3>
-            <div className="align_all_left">
+            <div className="align_all_left spacing_between_elements">
             <div className="spacing_between_elements">
                 <div>Verify Email Address</div>
             </div>

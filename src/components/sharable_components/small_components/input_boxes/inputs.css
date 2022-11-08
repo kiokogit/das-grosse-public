@@ -50,9 +50,13 @@ input[type='date'] {
 .small_input {
     padding:4px;
     height:1.5rem;
-    min-width: 4rem;
+    min-width: 2rem;
     max-width: 90%;
     font-size: 0.9rem;
+}
+
+.small_input_number{
+    width:1rem
 }
 
 .text_area {

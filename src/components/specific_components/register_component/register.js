@@ -16,13 +16,13 @@ export const Register = () => {
                 fields= {(
                     <div>
                         <div>
-                            <Input placeholder={'Enter Email Address'} />
+                            <Input placeholder={'Enter Email Address'} type='text' />
                         </div>
                         <div>
-                            <Input placeholder={'Choose a good Password'} />
+                            <Input placeholder={'Choose a good Password'} type='text' />
                         </div>
                         <div>
-                            <Input placeholder={'Confirm Password'} />
+                            <Input placeholder={'Confirm Password'} type='text' />
                         </div>
                     </div>
                 )}

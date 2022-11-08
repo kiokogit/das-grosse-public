@@ -2,7 +2,7 @@ import { SearchInput } from '../../sharable_components/large_components/floating
 import { InvisibleBtn} from '../../sharable_components/small_components/buttons/buttons'
 import './minor_header.css'
 
-export const MinorHeader = () =>{
+export const MinorHeader = ({searchValue, setSearchValue, search_results=[]}) =>{
 
     return (
         <div className='flex_to_row'>
@@ -24,7 +24,12 @@ export const MinorHeader = () =>{
                 </div>
             </div>
                 <div className='minor_search search_margin'>
-                    <SearchInput placeholder={'Search available packages...'} />
+                    <SearchInput 
+                    placeholder={'Search available packages...'} 
+                    searchValue={searchValue}
+                    setSearchValue={setSearchValue}
+                    search_results={search_results}
+                    />
                 </div>
         
         </div>

@@ -10,7 +10,7 @@
 .flexrow {
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:space-around;
 }
 .flex_column {
     display: flex;
@@ -44,4 +44,28 @@
     align-items: center;
     justify-self: center;
     color:white;
+}
+
+.hidden_box {
+    display: none;
+}
+
+.main_container {
+    position:relative;
+}
+
+.dropdown_on_header {
+    position:absolute;
+    top:2.2cm;
+    right:0cm;
+}
+
+.dropdown_card {
+    border: 0.5px solid rgb(157, 131, 81);
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    width: 3cm;
+    padding:6px;
+    height: max-content;
 }

@@ -4,6 +4,16 @@
     grid-template-columns: 1.5fr 1fr 0.9fr;
     width: 95%;
 }
+.column_grids_partition_equal {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 95%;
+}
+.column_grids_partition_equal_2 {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    width: 95%;
+}
 
 .border_left {
     border-left: 1px rgb(157, 131, 81);
@@ -29,4 +39,10 @@
 
 .align_all_left {
     text-align: left;
+}
+
+.flex_to_row {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

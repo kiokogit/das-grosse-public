@@ -15,21 +15,24 @@ import './landing.css'
 export const Landing = () =>{
     // set the current window
     const [windows, setWindow] = useState('Home')
+    const [dropdown, setDropdown] = useState(false)
     useEffect(()=>{
         // let objState = {id:300}
         window.history.replaceState("", windows, `${windows.replace(" ","")}`)
     }, [windows])
 
+    const [selected_package, setSelected_package] = useState({})
+
     return (
         <div className="main_component display_row_grids">
             <div className="main_content_container">
-                <PublicHeader setWindow={setWindow}/>
+                <PublicHeader setWindow={setWindow} dropdrown={dropdown} setDropdown={setDropdown} />
                 <MainBody>
                     {windows==='Home' && <Home />}
                     {windows==='About Us' && <AboutUs />}
-                    {windows==='Booking' && <Booking />}
+                    {windows==='Booking' && <Booking pack={selected_package} />}
                     {windows==='Journey Planner' && <JourneyPlanner />}
-                    {windows==='Packages' && <Packages />}
+                    {windows==='Packages' && <Packages setWindows={setWindow} setSelected_package={setSelected_package}/>}
                     {windows==='Contact Us' && <ContactUs />}
                 </MainBody>
             </div>

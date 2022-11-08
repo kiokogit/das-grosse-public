@@ -1,42 +1,18 @@
-import { useState } from 'react'
+import {  useState } from 'react'
 import { SearchInput } from '../../sharable_components/large_components/floating_search_cards/search_input'
 import { InvisibleBtn2 } from '../../sharable_components/small_components/buttons/buttons'
 import { Input, RadioInput, TextArea } from '../../sharable_components/small_components/input_boxes/input_boxes'
 
 import './pages.css'
 
-export const BookingPageOne = (booking_details) => {
-    const [package_type, setPackage_type] = useState('None')
-    booking_details = {
-        ...booking_details,
-        destination:{
-            package_type:package_type,
-            location: false,
-            preferences:["List of strings"]
-        },
-        travel_details:{
-            no_of_adults:2,
-            no_of_children:2,
-            preferred_mode_of_transport: "air",
-            further_particulars: ["None"]
-        },
-        dates_of_travel:{
-            from:"Date",
-            to:"date",
-            no_of_days:"",
-            no_of_nights:""
-        },
-        cost_details:{
-            calculated_cost:"None calculated",
-            quotation_order_placed:"False"
-        }
-    }
-    
+export const BookingPageOne = ({booking_details, is_predefined, setBookingDetails}) => {
+
+    const [searchValue, setSearchValue]= useState('')
 
     return (
         <div>
             <h3>Package Details</h3>
-            <div className="column_grids_partition">
+            <div className="column_grids_partition spacing_between_elements">
                 <div className='border_right'>
                     <h5>Destination</h5>
                     <div>
@@ -45,7 +21,7 @@ export const BookingPageOne = (booking_details) => {
                             type='radio' 
                             value='predefined' 
                             label='Choose your Vacation destination'
-                            setValue={setPackage_type}
+                            setValue={e=>setBookingDetails({...booking_details, destination:{package_type:'predefined'}})}
                             />
                             Or
                         <RadioInput 
@@ -53,39 +29,44 @@ export const BookingPageOne = (booking_details) => {
                             type='radio' 
                             value='custom' 
                             label='Order a Custom Vacation Destination' 
-                            setValue={setPackage_type}
+                            setValue={e=>setBookingDetails({...booking_details, destination:{package_type:'custom'}})}
                             />
                     </div>
                     <div className='spacing_between_elements align_all_left'>
-                        {package_type==='predefined' && 
-                                <div>
+                        {booking_details.destination.package_type==='predefined' && 
+                                <div>   
                                     <small className='margin_around'><i>Search among the available packages, and specify details as required. Hit the SEARCH button if your option is not on the dropdown list</i></small>
-                                    <SearchInput placeholder={'Search for a package...'} />
+                                    <SearchInput 
+                                        placeholder={'Search for a package...'} 
+                                        searchValue={searchValue} 
+                                        search_results={[]} 
+                                        setSearchValue={setSearchValue} 
+                                    />
                                     <div>
-                                        <Input value={booking_details.destination.location || '---No Chosen Destination---'} type='text'/>
+                                        <Input value={booking_details?.destination?.location || '---No Chosen Destination---'} type='text'/>
                                     </div>
-                                    {booking_details.destination.location && 
+                                    {booking_details?.destination?.location && 
                                     
                                         <div>
                                             <div>
-                                                <img src={package_type}  alt='NoCover'/>
+                                                <img src={booking_details?.destination?.cover_image}  alt='NoCover'/>
                                             </div>
                                             <div>
                                                 <h5>
-                                                    Title
+                                                    {booking_details?.destination?.title}
                                                 </h5>
                                             </div>
                                             <div>
-                                                Description
+                                                {booking_details?.destination?.description}
                                             </div>
                                         </div>
                                     }
                                 </div>
                         }
-                        {package_type==='custom' && 
+                        {booking_details.destination.package_type==='custom' && 
                                 <div>
                                     <small><i>Search by a destination location (eg town, city), hotel name, park, etc, and/or enter comprehensive details for a custom order.</i></small>
-                                    <SearchInput placeholder={'Search for a destination...'} />
+                                    <SearchInput placeholder={'Search for a destination...'} searchValue={searchValue} search_results={[]} setSearchValue={setSearchValue} />
                                     <div>
                                         <Input value={'---No Chosen Destination---'} type='text'/>
                                     </div>
@@ -141,18 +122,21 @@ export const BookingPageOne = (booking_details) => {
                     <div className='align_all_left'>To</div>
                     <Input type={'date'} />
                     <div className='align_all_left'>No of Days</div>
-                    <Input type={'number'}/>
+                    <Input type={'number'} placeholder='eg. 2'/>
                     <div className='align_all_left'>No of Nights</div>
-                    <Input type={'number'} />
-                    {package_type==='predefined' && 
+                    <Input type={'number'} placeholder='eg. 3' />
+                    {booking_details.destination.package_type==='predefined' && 
                         <div>
+                            <div> 
+                                <small><i>Click here to see tentative cost of your trip, exempting any special particulars that may be requested. Final bill shall be confirmed in the invoice.</i></small>
+                            </div>
                             <InvisibleBtn2 value={'Calculate Initial Cost'} className='submit_btn' />
                             <div> 
-                                <InvisibleBtn2 value={booking_details.cost_details.calculated_cost} />
+                                <InvisibleBtn2 value={booking_details?.cost_details?.calculated_cost} />
                             </div>
                         </div>
                     }
-                    {package_type==='custom' && 
+                    {booking_details.destination.package_type==='custom' && 
                     <div>
                         <small>
                             <i>

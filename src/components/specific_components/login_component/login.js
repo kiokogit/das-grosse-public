@@ -14,10 +14,10 @@ export const Login = () => {
                 fields= {(
                     <div>
                         <div>
-                            <Input placeholder={'Enter Email Address'} />
+                            <Input placeholder={'Enter Email Address'} type='text' />
                         </div>
                         <div>
-                            <Input placeholder={'Password'} />
+                            <Input placeholder={'Password'} type='text' />
                         </div>
                     </div>
                 )}
