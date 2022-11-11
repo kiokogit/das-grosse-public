@@ -5,7 +5,7 @@ import {InvisibleBtn2 } from '../../sharable_components/small_components/buttons
 import './public_header.css'
 
 
-export const PublicHeader = ({setWindow, setDropdown, dropdrown}) => {
+export const PublicHeader = ({setWindow, setDropdown, dropdrown, user_is_logged_in}) => {
     // real time time
     const [time, setTime] = useState('');
     useEffect(()=>{
@@ -18,7 +18,7 @@ export const PublicHeader = ({setWindow, setDropdown, dropdrown}) => {
             <div className='header_body padding_top flex_column' >
                 <div className='grid_columns'>
                     <div id='company_name'>
-                        Das Grosse Arbenteur
+                        {user_is_logged_in && 'Logged in user' }
                     </div>
                     <div className='small_font'>
                         {time.toString()}

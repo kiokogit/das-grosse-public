@@ -6,7 +6,7 @@ export const SubmitCancelForm = ({fields, header, submitfn, cancelfn}) =>{
 
     return (
         <div>
-            <form className="form" onSubmit={e=>submitfn(e)}>
+            <form className="form">
                 <div id='company_name'>
                     Das Grosse Arbenteur
                 </div>

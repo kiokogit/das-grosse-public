@@ -4,7 +4,7 @@ import './buttons.css'
 export const SubmitBtn = ({onsubmitfn}) => {
 
     return(
-        <button className="btn submit_btn" onClick={e=>onsubmitfn(e)} >
+        <button className="btn submit_btn" onClick={onsubmitfn} >
             Submit
             </button>
     )

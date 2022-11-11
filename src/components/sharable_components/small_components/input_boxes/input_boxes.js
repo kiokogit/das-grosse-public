@@ -1,10 +1,10 @@
 import './inputs.css'
 
-export const Input = ({placeholder, value, setValue, type, name, label}) => {
+export const Input = ({placeholder, type, name, label, onChange}) => {
     return (
         <div className='display_inline'>
             {label && <div>{label}</div>}
-            <input name={name} type={type? type:'button'} value={value} contentEditable={false} className="input margin_around" placeholder={placeholder} onChange={e=>setValue(e.target.value)} />
+            <input name={name} type={type? type:'button'} contentEditable={false} className="input margin_around" placeholder={placeholder} onChange={e=>onChange(e)} />
         </div>
     )
 }
