@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom'
+import { logout_public_user } from '../../../actions/user_accounts_actions';
 import {InvisibleBtn2 } from '../../sharable_components/small_components/buttons/buttons';
 
 import './public_header.css'
@@ -11,6 +13,14 @@ export const PublicHeader = ({setWindow, setDropdown, dropdrown, user_is_logged_
     useEffect(()=>{
       setInterval(()=>{ let nwDate = new Date(); setTime(nwDate)}, 1000);
     },[])
+
+    const dispatch = useDispatch()
+
+    // log out
+    const log_out_user = () => {
+        console.log('User logged out')
+        dispatch(logout_public_user())
+    }
 
 
     return(
@@ -47,9 +57,24 @@ export const PublicHeader = ({setWindow, setDropdown, dropdrown, user_is_logged_
             </div>
             <div className={`dropdown_on_header ${!dropdrown && 'hidden_box'}`}>
                 <div className='dropdown_card'>
-                    <Link to='/user_account'>
-                        <InvisibleBtn2 value={'Account'} />
-                    </Link>
+                    {user_is_logged_in? 
+
+                        <div>
+                            <Link to='/user_account'>
+                                <InvisibleBtn2 value={'Account Settings'} />
+                            </Link>
+                            <InvisibleBtn2 value={'LogOut'} onClick={e=>log_out_user()}/>
+                        </div>
+                        :
+                        <div> 
+                            <Link to='/user_account'>
+                                <InvisibleBtn2 value={'Login'} />
+                            </Link>
+                            <Link to='/user_account'>
+                                <InvisibleBtn2 value={'Create Account'} />
+                            </Link>
+                        </div>
+                }
                     <div>
                         <InvisibleBtn2 value={'Contact Us'} onClick={(e)=>{
                             setWindow(e.target.value)

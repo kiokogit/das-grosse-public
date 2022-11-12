@@ -8,15 +8,35 @@ import { all_reducers } from './combined_reducers/combine_reducers';
 import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux';
 import thunk from 'redux-thunk';
 
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'
+import { PersistGate } from 'redux-persist/integration/react';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const data_store = createStore(all_reducers, compose(applyMiddleware(thunk)))
 
+const persistConfig = {
+  key:'root',
+  storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, all_reducers)
+const data_store = createStore(persistedReducer, compose(applyMiddleware(thunk)))
+const persistor = persistStore(data_store)
+
+const Loading = () => {
+  console.log('Loading')
+  return (
+    <div>Loading</div>
+  )
+}
 root.render(
   <Provider store={data_store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <PersistGate loading={<Loading />} persistor={persistor} >
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </PersistGate>
   </Provider>
 );
 
@@ -24,3 +44,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+

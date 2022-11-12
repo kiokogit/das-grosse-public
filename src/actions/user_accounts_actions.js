@@ -7,7 +7,7 @@ export const register_user_action = (user_details) => async(dispatch) => {
     try {
         const response = await account_api.register_new_user(user_details)
         dispatch({type:'REGISTRATION_STATUS', payload:'success'})
-        console.log(response.data.details)
+        dispatch({type:'LOGIN_STATUS', payload:'first_time_user'})
         parse_alert_messages(response)
     } catch (error) {
         console.log(error.response.data.details)        
@@ -19,11 +19,20 @@ export const login_public_user = (credentials) => async(dispatch) => {
     try {
         
         const response = await account_api.login_user(credentials)
-        console.log(response.data.details)
         dispatch({type:'LOGIN_STATUS', payload:'success'})
+        localStorage.setItem('token', response.headers.get('jwtauth'))
         parse_alert_messages(response)
 
     } catch (error) {
-        console.log(error.response.data.details)        
+        console.log(error.response)        
+    }
+}
+
+export const logout_public_user = () => async(dispatch) => {
+    try{
+        dispatch({type:'LOGIN_STATUS', payload:null})
+
+    } catch(error){
+
     }
 }

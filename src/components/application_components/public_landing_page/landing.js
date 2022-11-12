@@ -11,9 +11,8 @@ import { Packages } from "./packages"
 
 
 import './landing.css'
-import { useSelector } from "react-redux"
 
-export const Landing = () =>{
+export const Landing = ({user_is_logged_in}) =>{
     // set the current window
     const [windows, setWindow] = useState('Home')
     const [dropdown, setDropdown] = useState(false)
@@ -24,17 +23,6 @@ export const Landing = () =>{
 
     const [selected_package, setSelected_package] = useState({})
 
-
-
-    // get if user is logged in or not
-    const user_is_logged_in = useSelector(state => {
-       if (state.logged_in_user_status){
-        return true
-       } else{
-        return false
-       }
-        
-    })
 
     return (
         <div className="main_component display_row_grids">
