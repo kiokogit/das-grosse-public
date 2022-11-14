@@ -1,6 +1,6 @@
 
 .btn{
-    width:fit-content;
+    width:max-content;
     min-width: none;
     padding:4px;
     border: 1px rgb(157, 131, 81);

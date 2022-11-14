@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { login_public_user, register_user_action } from '../../../actions/user_accounts_actions'
+import { LOGIN_ROUTE, REGISTER_ROUTE, RESET_PASS_ROUTE } from '../../../routing/routing_constants'
 
 import { InvisibleBtn } from "../../sharable_components/small_components/buttons/buttons"
 import { Login } from "../../specific_components/login_component/login"
@@ -10,17 +11,8 @@ import { ResetPassword } from '../../specific_components/reset_password/reset_pa
 
 import './login_reg.css'
 
-export const LoginRegister = () => {
-    const [mode, setMode] = useState('login')
+export const LoginRegister = ({user_is_logged_in, mode}) => {
     const dispatch = useDispatch()
-    const setSwitchValue = (e) => {
-        if (mode==='login') {
-            setMode('register')
-        }
-        else {
-            setMode('login')
-        }
-    }
 
     const [credentials, setCredentials] = useState(
         {
@@ -33,7 +25,6 @@ export const LoginRegister = () => {
     // login submit action
     const login_user = (e, credentials) => {
         e.preventDefault()
-        console.log(credentials)
         dispatch(login_public_user(credentials))
     }
 
@@ -52,7 +43,11 @@ export const LoginRegister = () => {
         dispatch(register_user_action(user_details))
     }
 
-
+    if(user_is_logged_in){
+        return (
+            <Navigate to={'/home'}/>
+        )
+    }
 
     return (
         <div className="full_window">
@@ -61,20 +56,20 @@ export const LoginRegister = () => {
                 {mode==='login' && 
                 <div>
                     <Login submitaction={e=>login_user(e, credentials)} credentials={credentials} setCredentials={setCredentials}/>
-                    <InvisibleBtn switchValue={'Reset Forgotten Password'} onClick={e=>setMode('resetPass')} />
+                    <Link to={RESET_PASS_ROUTE}>
+                        <InvisibleBtn switchValue={'Reset Forgotten Password'} />
+                    </Link>
                     </div>}
                 {mode==='register' && <Register 
                 submit_action={e=>register_new_user(e, user_details)} 
                 user_details={user_details} 
                 setUserdetails={setUserdetails} 
                 />}
-                {mode==='resetPass' && <ResetPassword />}
-                or <InvisibleBtn switchValue={mode==='login'? 'Register Here':'Login'} onClick={e=>setSwitchValue(e)}/>
-                <div>
-                    <Link to='/'>
-                        <InvisibleBtn switchValue={'Home'} />
-                    </Link>
-                </div>
+                {mode==='reset_password' && <ResetPassword />}
+                or <Link to={mode==='login'? REGISTER_ROUTE:LOGIN_ROUTE}>
+                    <InvisibleBtn switchValue={mode==='login'? 'Register Here':'Login'}/>
+                </Link>
+                
             </div>
         </div>
     )

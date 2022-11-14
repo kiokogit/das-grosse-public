@@ -19,7 +19,7 @@ export const login_public_user = (credentials) => async(dispatch) => {
     try {
         
         const response = await account_api.login_user(credentials)
-        dispatch({type:'LOGIN_STATUS', payload:'success'})
+        dispatch({type:'LOGIN_STATUS', payload:true})
         localStorage.setItem('token', response.headers.get('jwtauth'))
         parse_alert_messages(response)
 
@@ -30,7 +30,7 @@ export const login_public_user = (credentials) => async(dispatch) => {
 
 export const logout_public_user = () => async(dispatch) => {
     try{
-        dispatch({type:'LOGIN_STATUS', payload:null})
+        dispatch({type:'LOGIN_STATUS', payload:false})
 
     } catch(error){
 

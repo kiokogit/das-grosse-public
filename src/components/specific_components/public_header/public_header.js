@@ -2,12 +2,23 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom'
 import { logout_public_user } from '../../../actions/user_accounts_actions';
+import { ABOUT_ROUTE, BOOKING_ROUTE, HOME_ROUTE, LOGIN_ROUTE, PACKAGES_ROUTE, PLANNER_ROUTE, REGISTER_ROUTE, CONTACT_ROUTE } from '../../../routing/routing_constants';
 import {InvisibleBtn2 } from '../../sharable_components/small_components/buttons/buttons';
 
 import './public_header.css'
 
 
-export const PublicHeader = ({setWindow, setDropdown, dropdrown, user_is_logged_in}) => {
+export const PublicHeader = ({ user_is_logged_in}) => {
+    document.addEventListener('click', (e)=>{
+        const dropdwn = document.getElementById('dropdown')
+        const dropdownbtn = document.getElementById('dropdown_btn')
+        if(!dropdownbtn.contains(e.target)){
+            dropdwn.style.display = 'none'
+        } else if(dropdownbtn.contains(e.target)){
+            dropdwn.style.display = 'block'
+        }
+    })
+
     // real time time
     const [time, setTime] = useState('');
     useEffect(()=>{
@@ -35,27 +46,27 @@ export const PublicHeader = ({setWindow, setDropdown, dropdrown, user_is_logged_
                     </div>
                 </div>
                 <div className='flexrow'>
-                    <div>
-                        <InvisibleBtn2 className={'menu_btn'} value='Home' onClick={(e)=>setWindow(e.target.value)}/>
-                    </div>
-                    <div>
-                        <InvisibleBtn2 className={'menu_btn'} value='About Us' onClick={(e)=>setWindow(e.target.value)} />
-                    </div>
-                    <div>
-                        <InvisibleBtn2 className={'menu_btn'} value='Packages' onClick={(e)=>setWindow(e.target.value)} />
-                    </div>
-                    <div>
-                        <InvisibleBtn2 className={'menu_btn'} value='Booking' onClick={(e)=>setWindow(e.target.value)} />
-                    </div>
-                    <div>
-                        <InvisibleBtn2 className={'menu_btn'} value='Journey Planner' onClick={(e)=>setWindow(e.target.value)} />
-                    </div>
-                    <div>
-                        <InvisibleBtn2 className={'menu_btn'} value='More' onClick={e=>setDropdown(!dropdrown)} />
+                    <Link to={HOME_ROUTE}>
+                        <InvisibleBtn2 className={'menu_btn'} value='Home'/>
+                    </Link>
+                    <Link to={ABOUT_ROUTE}>
+                        <InvisibleBtn2 className={'menu_btn'} value='About Us' />
+                    </Link>
+                    <Link to={PACKAGES_ROUTE}>
+                        <InvisibleBtn2 className={'menu_btn'} value='Packages' />
+                    </Link>
+                    <Link to={BOOKING_ROUTE}>
+                        <InvisibleBtn2 className={'menu_btn'} value='Booking' />
+                    </Link>
+                    <Link to={PLANNER_ROUTE}>
+                        <InvisibleBtn2 className={'menu_btn'} value='Journey Planner' />
+                    </Link>
+                    <div id='dropdown_btn'>
+                        <InvisibleBtn2 className={'menu_btn'} value='More'/>
                     </div>
                 </div>
             </div>
-            <div className={`dropdown_on_header ${!dropdrown && 'hidden_box'}`}>
+            <div id='dropdown' className={`dropdown_on_header`}>
                 <div className='dropdown_card'>
                     {user_is_logged_in? 
 
@@ -63,24 +74,25 @@ export const PublicHeader = ({setWindow, setDropdown, dropdrown, user_is_logged_
                             <Link to='/user_account'>
                                 <InvisibleBtn2 value={'Account Settings'} />
                             </Link>
-                            <InvisibleBtn2 value={'LogOut'} onClick={e=>log_out_user()}/>
+                            <div>
+                                <InvisibleBtn2 value={'LogOut'} onClick={e=>log_out_user()}/>
+                            </div>
                         </div>
                         :
                         <div> 
-                            <Link to='/user_account'>
+                            <Link to={LOGIN_ROUTE}>
                                 <InvisibleBtn2 value={'Login'} />
                             </Link>
-                            <Link to='/user_account'>
-                                <InvisibleBtn2 value={'Create Account'} />
-                            </Link>
+                            <div>
+                                <Link to={REGISTER_ROUTE}>
+                                    <InvisibleBtn2 value={'Create Account'} />
+                                </Link>
+                            </div>
                         </div>
                 }
-                    <div>
-                        <InvisibleBtn2 value={'Contact Us'} onClick={(e)=>{
-                            setWindow(e.target.value)
-                            setDropdown(false)
-                        }}/>
-                    </div>
+                    <Link to={CONTACT_ROUTE}>
+                        <InvisibleBtn2 value={'Contact Us'}/>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import { PackageList } from "../../specific_components/package_list_card/package
 
 const packagess = [
     {
-        cover_image:"data://anucidsbywav",
+        cover_image:"https://media.wired.com/photos/5b899992404e112d2df1e94e/master/pass/trash2-01.jpg",
         title:"My First tour Pack",
         description:"Here is the description in brief",
         contains:"For two, travelling all over",
@@ -29,7 +29,7 @@ export const Packages = ({packages=packagess, setWindows, setSelected_package}) 
             <div className="centered_div">
                 {packages.length > 0 && 
                     packages.map(pack=> 
-                        <div>
+                        <div key={pack}>
                             <PackageList pack={pack} setWindow={setWindows} setSelected_package={setSelected_package}/>
                         </div>
                         )
