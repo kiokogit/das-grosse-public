@@ -3,7 +3,7 @@ import { Input } from "../../sharable_components/small_components/input_boxes/in
 
 import './login.css'
 
-export const Login = ({submitaction, credentials, setCredentials}) => {
+export const Login = ({submitaction, credentials, setCredentials, oncancel}) => {
     
     return (
         <div className="center_all">

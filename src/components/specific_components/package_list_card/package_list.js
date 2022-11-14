@@ -1,8 +1,17 @@
+import { useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
+import { get_package_for_booking } from "../../../actions/packages_actions"
+import { BOOKING_ROUTE } from "../../../routing/routing_constants"
 import { InvisibleBtn, InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
 
 import './package.css'
 
-export const PackageList = ({pack, setWindow, setSelected_package}) =>{
+export const PackageList = ({pack,setSelected_package}) =>{
+
+    const dispatch = useDispatch()
+    const select_package_for_booking = () => {
+        dispatch(get_package_for_booking())
+    }
     
     return (
         <div className='package_list_card'>
@@ -43,11 +52,11 @@ export const PackageList = ({pack, setWindow, setSelected_package}) =>{
                 </div>
             </div>
             <div className="package_action_buttons">
-                <div>
+                <Link to={BOOKING_ROUTE}>
                     <InvisibleBtn2 className={'submit_btn'} value='Book Now' onClick={e=>{
-                        setSelected_package(pack)
-                        setWindow('Booking')}} />
-                </div>
+                        select_package_for_booking()
+                        }} />
+                </Link>
                 <div>
                     <InvisibleBtn switchValue={'Add to wishlist'} />
                 </div>

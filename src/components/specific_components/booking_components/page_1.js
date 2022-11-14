@@ -1,11 +1,11 @@
 import {  useState } from 'react'
 import { SearchInput } from '../../sharable_components/large_components/floating_search_cards/search_input'
-import { InvisibleBtn2 } from '../../sharable_components/small_components/buttons/buttons'
-import { Input, RadioInput, TextArea } from '../../sharable_components/small_components/input_boxes/input_boxes'
+import { InvisibleBtn, InvisibleBtn2} from '../../sharable_components/small_components/buttons/buttons'
+import { Input, InputVariant, RadioInput, TextArea } from '../../sharable_components/small_components/input_boxes/input_boxes'
 
 import './pages.css'
 
-export const BookingPageOne = ({booking_details, is_predefined, setBookingDetails}) => {
+export const BookingPageOne = ({booking_details, setBookingDetails, clear_data}) => {
 
     const [searchValue, setSearchValue]= useState('')
 
@@ -20,6 +20,7 @@ export const BookingPageOne = ({booking_details, is_predefined, setBookingDetail
                             name='package_type' 
                             type='radio' 
                             value='predefined' 
+                            checked={booking_details?.destination?.package_type==='predefined'? 'checked':false}
                             label='Choose your Vacation destination'
                             setValue={e=>setBookingDetails({...booking_details, destination:{package_type:'predefined'}})}
                             />
@@ -28,6 +29,7 @@ export const BookingPageOne = ({booking_details, is_predefined, setBookingDetail
                             name='package_type' 
                             type='radio' 
                             value='custom' 
+                            checked={booking_details?.destination?.package_type==='custom'? 'checked':false}
                             label='Order a Custom Vacation Destination' 
                             setValue={e=>setBookingDetails({...booking_details, destination:{package_type:'custom'}})}
                             />
@@ -42,13 +44,14 @@ export const BookingPageOne = ({booking_details, is_predefined, setBookingDetail
                                         search_results={[]} 
                                         setSearchValue={setSearchValue} 
                                     />
-                                    <div>
-                                        <Input value={booking_details?.destination?.location || '---No Chosen Destination---'} type='text'/>
+                                    <div className='display_inline_row'>
+                                        <InputVariant value={booking_details?.destination?.location || '---No Chosen Destination---'} type='text'/>
+                                        <InvisibleBtn switchValue='Clear Package Data' onClick={clear_data} />
                                     </div>
                                     {booking_details?.destination?.location && 
                                     
                                         <div>
-                                            <div>
+                                            <div className='cover_image_booking'>
                                                 <img src={booking_details?.destination?.cover_image}  alt='NoCover'/>
                                             </div>
                                             <div>

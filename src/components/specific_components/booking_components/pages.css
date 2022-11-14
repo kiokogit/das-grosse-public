@@ -46,3 +46,19 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.cover_image_booking{
+    width: 70%;
+    height:70%;
+}
+.cover_image_booking img{
+    width: 100%;
+    height:100%;
+}
+
+.display_inline_row{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    text-align: left;    
+}

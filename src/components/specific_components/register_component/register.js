@@ -4,7 +4,7 @@ import { Input } from "../../sharable_components/small_components/input_boxes/in
 import './register.css'
 
 
-export const Register = ({submit_action, user_details, setUserdetails}) => {
+export const Register = ({submit_action, user_details, setUserdetails, oncancel}) => {
 
 
     return (

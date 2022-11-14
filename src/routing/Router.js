@@ -19,6 +19,9 @@ export const Router = () =>{
 
     // get if user is logged in or not
     const user_is_logged_in = useSelector(state =>state.logged_in_user_status)
+    const package_detail_view = useSelector(state=>state.package_detail_view)
+    const package_for_booking = useSelector(state=> state.package_for_booking)
+
 
 
     return (
@@ -38,7 +41,7 @@ export const Router = () =>{
                     <Route path='home' element={<Home />} />
                     <Route path='packages' element={<Packages/>} />
                     <Route path='about' element={<AboutUs />} />
-                    <Route path='booking' element={<Booking />} />
+                    <Route path='booking' element={<Booking selected_package={package_for_booking}/>} />
                     <Route path='journey_planner' element={<JourneyPlanner />} />
                     <Route path='contact_us' element={<ContactUs />} />
 
