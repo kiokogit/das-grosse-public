@@ -71,7 +71,7 @@ export const BookingPageOne = ({booking_details, setBookingDetails, clear_data})
                                     <small><i>Search by a destination location (eg town, city), hotel name, park, etc, and/or enter comprehensive details for a custom order.</i></small>
                                     <SearchInput placeholder={'Search for a destination...'} searchValue={searchValue} search_results={[]} setSearchValue={setSearchValue} />
                                     <div>
-                                        <Input value={'---No Chosen Destination---'} type='text'/>
+                                        <InputVariant value={booking_details?.destination?.location || '---No Chosen Destination---'} type='text'/>
                                     </div>
                                     <div> 
                                         <TextArea label={"Enter the Locations to be visited"} placeholder={'Destinations to be visited during the trip'}/>

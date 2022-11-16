@@ -32,9 +32,9 @@ export const package_for_booking = (state={}, action) => {
             
             }
         case 'CLEAR_PACKAGE_FOR_BOOKING':
-            return null
+            return action.payload
 
         default:
-            return null
+            return state
     }
 }

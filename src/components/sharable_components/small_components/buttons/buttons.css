@@ -49,3 +49,9 @@
     margin: 0px;
     font-family:inherit;
 }
+
+.side_bar_btn {
+    color: rgb(157, 131, 81);
+    width:100%;
+    /* border-top: 1px rgb(157, 131, 81) solid; */
+}

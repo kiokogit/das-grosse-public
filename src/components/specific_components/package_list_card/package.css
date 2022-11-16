@@ -9,7 +9,7 @@
     margin-left: 100px;
     height:max-content;
     border: 0.5px solid black;
-    border-radius: 15px;
+    border-radius: 10px;
     display: grid;
     padding: 10px;
     grid-template-columns: 5fr 1fr;

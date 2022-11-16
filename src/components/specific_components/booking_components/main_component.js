@@ -9,23 +9,24 @@ import { BookingPageThree } from "./page_3"
 import { BookingPageTwo } from "./page_2"
 import { BookingPageFour } from "./page_4"
 import { clear_package_for_booking } from "../../../actions/packages_actions"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 
-export const MainContainer = ({selected_package}) => {
+export const MainContainer = () => {
     const [page_no, setPage_no] = useState(1)
-    const [booking_details, setBookingDetails]  = useState({
-        destination:{...selected_package}
-    })
-
     const dispatch = useDispatch()
+
+    const package_for_booking = useSelector(state=> state.package_for_booking)
+
+    const [booking_details, setBookingDetails]  = useState({
+        destination:{...package_for_booking}
+    })
 
     const clear_package_data = (e) => {
         e.preventDefault()
         setBookingDetails({destination:{}})
         dispatch(clear_package_for_booking())
     }
-
 
     return (
         <div className="whole_page" >

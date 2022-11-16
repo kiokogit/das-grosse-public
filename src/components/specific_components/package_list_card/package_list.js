@@ -6,11 +6,11 @@ import { InvisibleBtn, InvisibleBtn2 } from "../../sharable_components/small_com
 
 import './package.css'
 
-export const PackageList = ({pack,setSelected_package}) =>{
+export const PackageList = ({pack}) =>{
 
     const dispatch = useDispatch()
-    const select_package_for_booking = () => {
-        dispatch(get_package_for_booking())
+    const select_package_for_booking = (id) => {
+        dispatch(get_package_for_booking(id))
     }
     
     return (
@@ -54,7 +54,7 @@ export const PackageList = ({pack,setSelected_package}) =>{
             <div className="package_action_buttons">
                 <Link to={BOOKING_ROUTE}>
                     <InvisibleBtn2 className={'submit_btn'} value='Book Now' onClick={e=>{
-                        select_package_for_booking()
+                        select_package_for_booking(pack.id)
                         }} />
                 </Link>
                 <div>

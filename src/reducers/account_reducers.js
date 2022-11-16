@@ -9,3 +9,13 @@ export const logged_in_user_status = (state=false, {type, payload}) => {
             return state
     }
 }
+
+export const logged_in_user_details = (state={}, action) => {
+    switch(action.type){
+        case "LOGGED_USER_DETAILS":
+            return action.payload
+
+        default:
+            return state
+    }
+}

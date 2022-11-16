@@ -3,6 +3,12 @@ body{
     scrollbar-width: none;
 }
 
+.flex_grid {
+    display:grid;
+    grid-template-columns: 0.7fr 4fr;
+    justify-content: flex-start;
+}
+
 .main_component {
     width: 100%;
     min-height:100vh;
@@ -28,4 +34,11 @@ body::-webkit-scrollbar {
 
 .centered_div {
     margin-top:2rem;
+}
+
+.pad_left {
+    padding-left: 20px;
+}
+.pad_top {
+    padding-top: 20px;
 }

@@ -10,7 +10,8 @@ const packagess = [
         contains:"For two, travelling all over",
         details:"Small fire around the camp",
         location:"Here is Nairobi",
-        price:"300USD"
+        price:"300USD",
+        id:"jiuhb889-uih0uh-njy6g7"
     
     }
 
