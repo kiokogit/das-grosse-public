@@ -93,6 +93,10 @@
     border-top: 0.5px solid grey;
 }
 
+.nav_link:hover{
+    background-color: rgb(243, 243, 243);
+}
+
 .logo_section {
     height: 200px;
     width: 100%;

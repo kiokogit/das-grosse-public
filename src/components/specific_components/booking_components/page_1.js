@@ -1,11 +1,13 @@
 import {  useState } from 'react'
+import { Link } from 'react-router-dom'
+import { BOOKING_ROUTE } from '../../../routing/routing_constants'
 import { SearchInput } from '../../sharable_components/large_components/floating_search_cards/search_input'
 import { InvisibleBtn, InvisibleBtn2} from '../../sharable_components/small_components/buttons/buttons'
 import { Input, InputVariant, RadioInput, TextArea } from '../../sharable_components/small_components/input_boxes/input_boxes'
 
 import './pages.css'
 
-export const BookingPageOne = ({booking_details, setBookingDetails, clear_data}) => {
+export const BookingPageOne = ({booking_details, setBookingDetails}) => {
 
     const [searchValue, setSearchValue]= useState('')
 
@@ -46,7 +48,9 @@ export const BookingPageOne = ({booking_details, setBookingDetails, clear_data})
                                     />
                                     <div className='display_inline_row'>
                                         <InputVariant value={booking_details?.destination?.location || '---No Chosen Destination---'} type='text'/>
-                                        <InvisibleBtn switchValue='Clear Package Data' onClick={clear_data} />
+                                        <Link to={BOOKING_ROUTE +'/'}>
+                                            <InvisibleBtn switchValue='Clear Package Data' />
+                                        </Link>
                                     </div>
                                     {booking_details?.destination?.location && 
                                     

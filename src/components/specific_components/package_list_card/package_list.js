@@ -1,17 +1,10 @@
-import { useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
-import { get_package_for_booking } from "../../../actions/packages_actions"
-import { BOOKING_ROUTE } from "../../../routing/routing_constants"
+import { BOOKING_ROUTE, PACKAGES_ROUTE } from "../../../routing/routing_constants"
 import { InvisibleBtn, InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
 
 import './package.css'
 
 export const PackageList = ({pack}) =>{
-
-    const dispatch = useDispatch()
-    const select_package_for_booking = (id) => {
-        dispatch(get_package_for_booking(id))
-    }
     
     return (
         <div className='package_list_card'>
@@ -41,21 +34,14 @@ export const PackageList = ({pack}) =>{
                     </div>
                 </div>
                 <div className="package_reviews">
-                    <div>
+                    <Link to={PACKAGES_ROUTE + '/'+pack.id}>
                         View more
-                    </div>
-                    <div>
-                        Stars of ratings
-                        5/5
-                        show more Reviews
-                    </div>
+                    </Link>
                 </div>
             </div>
             <div className="package_action_buttons">
-                <Link to={BOOKING_ROUTE}>
-                    <InvisibleBtn2 className={'submit_btn'} value='Book Now' onClick={e=>{
-                        select_package_for_booking(pack.id)
-                        }} />
+                <Link to={BOOKING_ROUTE+'/predefined/'+pack.id}>
+                    <InvisibleBtn2 className={'submit_btn'} value='Book Now' />
                 </Link>
                 <div>
                     <InvisibleBtn switchValue={'Add to wishlist'} />

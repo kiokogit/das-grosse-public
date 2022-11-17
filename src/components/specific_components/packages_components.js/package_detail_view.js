@@ -1,13 +1,13 @@
 import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import {useDispatch, useSelector } from "react-redux"
+import { useParams } from "react-router-dom"
 import { get_package_detail_view } from "../../../actions/packages_actions"
 
-export const Package_detail_view = ({id}) => {
+export const PackageDetailView = () => {
 
     const dispatch = useDispatch()
-
+    const {id} = useParams()
     useEffect(()=>{
-
         dispatch(get_package_detail_view(id))
     })
 

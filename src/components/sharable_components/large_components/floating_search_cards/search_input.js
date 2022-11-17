@@ -16,7 +16,7 @@ export const SearchInput = ({placeholder, search_results=[], searchValue, setSea
                 {search_results.length < 1 ? <i>No related search results</i>:
                 <div>
                     {search_results.map(value=>
-                        <li key={value}>{value.title}</li>
+                        <li key={value.id}>{value.title}</li>
                         )}
                      </div>
                 }

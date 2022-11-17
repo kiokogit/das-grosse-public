@@ -52,10 +52,10 @@ export const Router = () =>{
                             <Route path="reset_password" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'reset_password'} />} />
 
                             <Route path='home' element={<Home />} />
-                            <Route path='packages' element={<Packages/>} />
+                            <Route path='packages/*' element={<Packages/>} />
                             <Route path='about' element={<AboutUs />} />
-                            <Route path='booking' element={<Booking />} />
-                            <Route path='journey_planner' element={<JourneyPlanner />} />
+                            <Route path='booking/*' element={<Booking />} />
+                            <Route path='journey_planner/*' element={<JourneyPlanner />} />
                             <Route path='contact_us' element={<ContactUs />} />
 
                         {/* not found route */}

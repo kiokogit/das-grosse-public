@@ -17,6 +17,18 @@ export const Register = ({submit_action, user_details, setUserdetails, oncancel}
                     <div>
                         <div>
                             <Input 
+                            placeholder={'First Name'} 
+                            type='text' 
+                            onChange={e=>setUserdetails({...user_details, first_name:e.target.value})} />
+                        </div>
+                        <div>
+                            <Input 
+                            placeholder={'Last Name'} 
+                            type='text' 
+                            onChange={e=>setUserdetails({...user_details, last_name:e.target.value})} />
+                        </div>
+                        <div>
+                            <Input 
                             placeholder={'Enter Email Address'} 
                             type='text' 
                             onChange={e=>setUserdetails({...user_details, email:e.target.value})} />
