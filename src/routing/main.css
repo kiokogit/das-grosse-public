@@ -1,11 +1,12 @@
 
 body{
     scrollbar-width: none;
+    font-size: 90%;
 }
 
 .flex_grid {
     display:grid;
-    grid-template-columns: 0.7fr 4fr;
+    grid-template-columns: 0.5fr 4fr;
     justify-content: flex-start;
 }
 

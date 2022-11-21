@@ -17,7 +17,7 @@ export const SubmitCancelForm = ({fields, header, submitfn, cancelfn}) =>{
                     {fields}
                 </div>
                 <div className="buttons_field">
-                    <SubmitBtn onsubmitfn={submitfn} />
+                    <SubmitBtn onsubmitfn={submitfn} className="submit_btn2" />
                     <CancelBtn oncancelfn={cancelfn} />
                 </div>
             </form>

@@ -1,0 +1,35 @@
+
+.about_container {
+    border-left: 0.1px solid grey;
+    width: 90%;
+    height:max-content;
+    /* border-radius: 10px; */
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about_qsn {
+    background-color: rgb(245, 243, 243);
+    font-weight: 700;
+    padding: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.flex_row_about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about_ans {
+    background-color: white;
+    padding: 5px;
+    margin:10px;
+    font-size: 90%;
+}
+
+.hidden_about {
+    display:none;
+}

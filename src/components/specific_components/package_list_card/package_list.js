@@ -10,25 +10,28 @@ export const PackageList = ({pack}) =>{
         <div className='package_list_card'>
             <div className="package_details_section">
                 <div className="package_details_no_reviews">
-                    <div className="package_details_only">
-                        <div className="cover_image_list">
-                            <img src={pack.cover_image} alt='cover' />
+                    <div>
+                        <div className="package_title">
+                            <div>{pack.title}</div>
                         </div>
-                        <div className="package_details_only2">
-                            <div className="package_title">
-                                <h4>{pack.title}</h4>
+                        <div  className="package_details_only">
+                            <div className="cover_image_list">
+                                    <img src={pack.cover_image} alt='cover' />
                             </div>
-                            <div>
-                                Location: {pack.location}{' for pin location, '} <a href="*">click here</a>
-                            </div>
-                            <div>
-                                Description: {pack.description}
-                            </div>
-                            <div>
-                                Package Contains: {pack.contains}
-                            </div>
-                            <div>
-                                Details: {pack.details}
+                            <div className="package_details_only2">
+                                
+                                <div>
+                                    Location: {pack.location}{' for pin location, '} <a href="*">click here</a>
+                                </div>
+                                <div>
+                                    Description: {pack.description}
+                                </div>
+                                <div>
+                                    Package Contains: {pack.contains}
+                                </div>
+                                <div>
+                                    Details: {pack.details}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -40,11 +43,17 @@ export const PackageList = ({pack}) =>{
                 </div>
             </div>
             <div className="package_action_buttons">
-                <Link to={BOOKING_ROUTE+'/predefined/'+pack.id}>
-                    <InvisibleBtn2 className={'submit_btn'} value='Book Now' />
-                </Link>
                 <div>
-                    <InvisibleBtn switchValue={'Add to wishlist'} />
+                    <div>
+                        <Link to={BOOKING_ROUTE+'/predefined/'+pack.id}>
+                            <InvisibleBtn2 className={'submit_btn2'} value='Book Now' />
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to={'/none'}>
+                            {'Add to wishlist'}
+                        </Link>
+                    </div>
                 </div>
                 <div className="package_price">
                     {pack.price} /Person

@@ -18,12 +18,12 @@
 
 .page_number {
     border: 0.2px solid black;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    width:2rem;
-    height:2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width:1.5rem;
+    height:1.5rem;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1rem;
     justify-items: center;
     text-align: center;
 }
@@ -42,7 +42,7 @@
 }
 
 .enabled_page .page_number {
-    border: rgb(157, 131, 81) 4px solid;
+    border: rgb(157, 131, 81) 2px solid;
 }
 
 .hr {

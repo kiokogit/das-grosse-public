@@ -30,19 +30,19 @@ export const Register = ({submit_action, user_details, setUserdetails, oncancel}
                         <div>
                             <Input 
                             placeholder={'Enter Email Address'} 
-                            type='text' 
+                            type='email' 
                             onChange={e=>setUserdetails({...user_details, email:e.target.value})} />
                         </div>
                         <div>
                             <Input 
                             placeholder={'Choose a good Password'} 
-                            type='text' 
+                            type='password' 
                             onChange={e=>setUserdetails({...user_details, password:e.target.value})}/>
                         </div>
                         <div>
                             <Input 
                             placeholder={'Confirm Password'} 
-                            type='text' 
+                            type='password' 
                             onChange={e=>setUserdetails({...user_details, password2:e.target.value})}/>
                         </div>
                     </div>

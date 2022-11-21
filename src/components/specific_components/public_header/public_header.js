@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom'
 import { logout_public_user } from '../../../actions/user_accounts_actions';
-import { LOGIN_ROUTE, REGISTER_ROUTE } from '../../../routing/routing_constants';
+import { HOME_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE } from '../../../routing/routing_constants';
 import {InvisibleBtn2 } from '../../sharable_components/small_components/buttons/buttons';
 
 import './public_header.css'
@@ -25,31 +25,31 @@ export const PublicHeader = ({ user_is_logged_in, user}) => {
     }
 
     return(
-        <div className='main_container'>
-            <div className='header_body padding_top flex_column' >
-                <div className='grid_columns'>
-                    <div id='company_name'>
-                        {'Das Grosse Arbenteur' }
-                    </div>
-                    <div className='small_font'>
-                        {time.toString()}
-                    </div>
-                </div>
+        <div className={`main_container`}>
+            <div className={`header_body padding_top flex_column ${!user_is_logged_in && ''}`} >
                 <div className='flexrow'>
-                    <div>
-                        {user_is_logged_in && user.email}
+                    <div className='bolden'>
+                        {time.toLocaleString()}
+                        <div>
+                            {user_is_logged_in && user.first_name +' '+ user.last_name}
+                        </div>
+                    </div>
+                    <div id='company_name'>
+                        {user_is_logged_in && 'Das Grosse Arbenteur' }
                     </div>
                     {user_is_logged_in? 
-                        <div className='flexrow'>
+                        <div className='flex_column'>
                             <Link to='/user_account'>
                                 <InvisibleBtn2 value={'Account Settings'} className='menu_btn' />
                             </Link>
                             <div>
-                                <InvisibleBtn2 value={'LogOut'} className='menu_btn' onClick={e=>log_out_user()}/>
+                                <Link to={HOME_ROUTE}>
+                                    <InvisibleBtn2 value={'LogOut'} className='menu_btn' onClick={e=>log_out_user()}/>
+                                </Link>
                             </div>
                         </div>
                         :
-                        <div className='flexrow'> 
+                        <div className='flex_column'> 
                             <Link to={LOGIN_ROUTE}>
                                 <InvisibleBtn2 value={'Login'} className='menu_btn' />
                             </Link>

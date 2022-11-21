@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import {Routes, Route} from 'react-router-dom'
+import { clear_short_error_action } from "../actions/error_actions"
 import { get_logged_in_user_profile } from "../actions/user_accounts_actions"
 
 import { AboutUs } from "../components/application_components/public_landing_page/about."
@@ -11,6 +12,7 @@ import { Home } from "../components/application_components/public_landing_page/h
 import { JourneyPlanner } from "../components/application_components/public_landing_page/journey_planner"
 import { Packages } from "../components/application_components/public_landing_page/packages"
 import { LoginRegister } from "../components/application_components/user_login_register/login_register"
+import { ErrorSuccessBar } from "../components/sharable_components/small_components/alerts/fail_success_bars"
 import { BreadCrumbs } from "../components/sharable_components/small_components/breadcrumbs/breadcrumbs"
 import { Footer } from "../components/specific_components/footer/Footer"
 import { PublicHeader } from "../components/specific_components/public_header/public_header"
@@ -24,6 +26,13 @@ export const Router = () =>{
     // get if user is logged in or not
     const logged_in_user_details = useSelector(state=> state.logged_in_user_details)
 
+    const short_alert = useSelector(state => state.short_alert)
+    if(short_alert){
+        setTimeout(() => {
+            dispatch(clear_short_error_action())
+        }, 6000);
+    }
+
     // get user details if logged in
     useEffect(()=>{
 
@@ -32,20 +41,21 @@ export const Router = () =>{
         }
     }, [dispatch, user_is_logged_in])
 
-
     return (
         <div>
             <div className="main_component display_row_grids">
                 <div className="flex_grid main_content_container">
-                    <SideBar />
+                    <SideBar user_is_logged_in={user_is_logged_in} />
                     <div>
                     <PublicHeader user_is_logged_in={user_is_logged_in} user={logged_in_user_details} />
-                    
+                    {/* alert messages */}
+                    {short_alert && <ErrorSuccessBar message={short_alert.message} alert_type={short_alert.alert_type}/>}
+                                        
                     {/* breadcrumbs */}
                     <div className="pad_left pad_top">
 
                     <BreadCrumbs />
-            {/* routes */}
+                    {/* routes */}
                         <Routes>
                             <Route path="login" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'login'}/>}/>
                             <Route path="register" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'register'} />} />
@@ -55,7 +65,7 @@ export const Router = () =>{
                             <Route path='packages/*' element={<Packages/>} />
                             <Route path='about' element={<AboutUs />} />
                             <Route path='booking/*' element={<Booking />} />
-                            <Route path='journey_planner/*' element={<JourneyPlanner />} />
+                            <Route path={`journey_planner/*`} element={<JourneyPlanner user_is_logged_in={user_is_logged_in} />} />
                             <Route path='contact_us' element={<ContactUs />} />
 
                         {/* not found route */}

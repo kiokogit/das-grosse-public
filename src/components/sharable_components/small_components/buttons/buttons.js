@@ -1,10 +1,10 @@
 import './buttons.css'
 
 // submit data
-export const SubmitBtn = ({onsubmitfn}) => {
+export const SubmitBtn = ({onsubmitfn, className}) => {
 
     return(
-        <button className="btn submit_btn" onClick={onsubmitfn} >
+        <button className={`btn submit_btn ${className}`} onClick={onsubmitfn} >
             Submit
             </button>
     )
@@ -20,9 +20,9 @@ export const CancelBtn = ({oncancelfn}) => {
 // close window
 export const CloseBtn = ({onclose}) => {
     return(
-        <button className="btn close_btn" onClick={e=>onclose(e)}>
+        <div className="close_btn" onClick={e=>onclose(e)}>
             x
-        </button>
+        </div>
     )
 }
 // invisible button / link button

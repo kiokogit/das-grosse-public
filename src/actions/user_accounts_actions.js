@@ -6,12 +6,12 @@ import { parse_alert_messages } from "./parse_alert_messages";
 export const register_user_action = (user_details) => async(dispatch) => {
     try {
         const response = await account_api.register_new_user(user_details)
-        dispatch({type:'REGISTRATION_STATUS', payload:'success'})
-        dispatch({type:'LOGIN_STATUS', payload:true})
+        dispatch({type:'REGISTRATION_STATUS', payload:response.data.details})
+        dispatch({type:'SHORT_SUCCESS_ALERT', payload:response.data.details})
+        await dispatch(login_public_user(user_details))
         parse_alert_messages(response)
     } catch (error) {
-        console.log(error.response.data.details)        
-
+        dispatch({type:'SHORT_ERROR_ALERT', payload:error.response.data.details}) 
     }
 }
 
@@ -19,12 +19,16 @@ export const login_public_user = (credentials) => async(dispatch) => {
     try {
         
         const response = await account_api.login_user(credentials)
-        dispatch({type:'LOGIN_STATUS', payload:true})
+        dispatch({type:'LOGIN_STATUS', payload:response.data.details})
         localStorage.setItem('token', response.headers.get('jwtauth'))
-        parse_alert_messages(response)
+        dispatch({type:'SHORT_SUCCESS_ALERT', payload:response.data.details})
 
     } catch (error) {
-        console.log(error.response)        
+        if(error.response?.status === 400) {
+            dispatch({type:'SHORT_ERROR_ALERT', payload:error.response.data.details}) 
+        } else{
+            dispatch({type:'SHORT_ERROR_ALERT', payload: 'Cannot process your request at this time'})
+        } 
     }
 }
 

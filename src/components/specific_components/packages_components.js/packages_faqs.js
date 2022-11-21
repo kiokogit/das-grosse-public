@@ -1,4 +1,7 @@
 
+import { useState } from 'react'
+import './faqs.css'
+
 export const Faqs = ({qsns}) => {
 
     return (
@@ -19,12 +22,20 @@ export const Faqs = ({qsns}) => {
 
 const FaqsComponent = ({q}) => {
 
+    const [showAns, setShowAns] = useState(false)
+
+
     return (
-        <div className="faq">
-            <div className="faq_qsn">
-                {q.question}
+        <div className="faq_container">
+            <div className="faq_qsn flex_row_qsn"  onClick={e=>setShowAns(!showAns)}>
+                <div id='question'>
+                    {q.question}
+                </div>
+                <div>
+                    {showAns? '-':'+'}
+                </div>
             </div>
-            <div className="faq_ans">
+            <div className={`faq_ans ${showAns? '':'hidden_ans'}`}>
                 {q.answer}
             </div>
         </div>

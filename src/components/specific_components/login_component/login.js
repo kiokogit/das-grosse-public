@@ -16,14 +16,14 @@ export const Login = ({submitaction, credentials, setCredentials, oncancel}) => 
                         <div>
                             <Input 
                             placeholder={'Enter Email Address'} 
-                            type='text' 
+                            type='email' 
                             onChange={e=> setCredentials({...credentials, email:e.target.value})} 
                             />
                         </div>
                         <div>
                             <Input 
                             placeholder={'Password'} 
-                            type='text' 
+                            type='password' 
                             onChange={e=> setCredentials({...credentials, password:e.target.value})}
                             />
                         </div>

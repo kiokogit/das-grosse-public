@@ -19,18 +19,26 @@
     background-color: rgb(157, 131, 81);
     color: white;
     min-width: 4rem;
+    font-weight: 600;
+}
+
+.submit_btn2 {
+    background-color: white ;
+    color: rgb(157, 131, 81);
+    min-width: 4rem;
+    font-weight: 600;
+    border: 1px solid rgb(157, 131, 81);
+    border-radius: 4px;
 }
 
 .cancel_btn {
-    background-color:rgb(185, 181, 181);
-    color: black;
+    background-color:rgb(157, 131, 81);
+    color: white;
 }
 
 .close_btn {
-    background-color: rgb(70, 3, 3);
-    border-radius: 50%;
-    border: 2px white solid;
-    color:black;
+    color:rgb(177, 0, 0);
+    cursor:pointer;
 }
 
 .invisible_btn {
@@ -43,9 +51,8 @@
     color:black;
     border:none;
     background:transparent;
-    font-size: medium;
     font-variant: normal;
-    font-weight:900;
+    font-weight:700;
     margin: 0px;
     font-family:inherit;
 }

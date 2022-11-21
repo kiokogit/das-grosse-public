@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useLocation } from 'react-router-dom'
 import { login_public_user, register_user_action } from '../../../actions/user_accounts_actions'
 import { LOGIN_ROUTE, REGISTER_ROUTE, RESET_PASS_ROUTE } from '../../../routing/routing_constants'
 
@@ -13,6 +13,7 @@ import './login_reg.css'
 
 export const LoginRegister = ({user_is_logged_in, mode}) => {
     const dispatch = useDispatch()
+    const location = useLocation()
 
     const [credentials, setCredentials] = useState(
         {
@@ -44,6 +45,11 @@ export const LoginRegister = ({user_is_logged_in, mode}) => {
     }
 
     if(user_is_logged_in){
+        if(location.state?.next_url){
+            return (
+                <Navigate to={location.state.next_url} />
+            )
+        }
         return (
             <Navigate to={'/home'}/>
         )

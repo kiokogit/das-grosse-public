@@ -13,22 +13,23 @@ export const SideBar = () => {
                 <div className='logo_section'>
                     Logo and Name
                 </div>
-                    <Link to={HOME_ROUTE} className={`nav_link ${pathname===HOME_ROUTE && 'current_nav'}`}>
+                    <Link to={HOME_ROUTE} className={`nav_link ${pathname.startsWith(HOME_ROUTE) && 'current_nav'}`}>
                         <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Home'/>
                     </Link>
-                    <Link to={PACKAGES_ROUTE} className={`nav_link ${pathname===PACKAGES_ROUTE && 'current_nav'}`}>
+                    <Link to={PACKAGES_ROUTE} className={`nav_link ${pathname.startsWith(PACKAGES_ROUTE) && 'current_nav'}`}>
                         <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Packages' />
                     </Link>
-                    <Link to={BOOKING_ROUTE} className={`nav_link ${pathname===BOOKING_ROUTE && 'current_nav'}`}>
+                    <Link to={BOOKING_ROUTE} className={`nav_link ${pathname.startsWith(BOOKING_ROUTE) && 'current_nav'}`}>
                         <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Booking' />
                     </Link>
-                    <Link to={PLANNER_ROUTE} className={`nav_link ${pathname===PLANNER_ROUTE && 'current_nav'}`}>
+                    
+                    <Link to={PLANNER_ROUTE} className={`nav_link ${pathname.startsWith(PLANNER_ROUTE) && 'current_nav'}`}>
                         <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Journey Planner' />
                     </Link>
-                    <Link to={CONTACT_ROUTE} className={`nav_link ${pathname===CONTACT_ROUTE && 'current_nav'}`} >
+                    <Link to={CONTACT_ROUTE} className={`nav_link ${pathname.startsWith(CONTACT_ROUTE) && 'current_nav'}`} >
                         <InvisibleBtn2 value={'Contact Us'} className={'menu_btn side_bar_btn'}/>
                     </Link>
-                    <Link to={ABOUT_ROUTE} className={`nav_link ${pathname===ABOUT_ROUTE && 'current_nav'}`}>
+                    <Link to={ABOUT_ROUTE} className={`nav_link ${pathname.startsWith(ABOUT_ROUTE) && 'current_nav'}`}>
                         <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='About Us' />
                     </Link>
                 </div>
