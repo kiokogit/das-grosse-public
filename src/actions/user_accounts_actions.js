@@ -11,7 +11,11 @@ export const register_user_action = (user_details) => async(dispatch) => {
         await dispatch(login_public_user(user_details))
         parse_alert_messages(response)
     } catch (error) {
-        dispatch({type:'SHORT_ERROR_ALERT', payload:error.response.data.details}) 
+        if(error.response?.status === 400) {
+            dispatch({type:'SHORT_ERROR_ALERT', payload:error.response.data.details}) 
+        } else{
+            dispatch({type:'SHORT_ERROR_ALERT', payload: 'Cannot process your request at this time'})
+        }  
     }
 }
 
@@ -49,6 +53,10 @@ export const get_logged_in_user_profile = ( ) => async(dispatch) =>{
         const {data} = await account_api.get_logged_in_user_profile()
         dispatch({type: 'LOGGED_USER_DETAILS', payload: data['details']})
     } catch(error){
-        console.log(error)
+        if(error.response?.status === 400) {
+            dispatch({type:'SHORT_ERROR_ALERT', payload:error.response.data.details}) 
+        } else{
+            dispatch({type:'SHORT_ERROR_ALERT', payload: 'Cannot Fetch user profile at this time'})
+        } 
     }
 }

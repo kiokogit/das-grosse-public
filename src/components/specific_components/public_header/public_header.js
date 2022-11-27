@@ -35,7 +35,7 @@ export const PublicHeader = ({ user_is_logged_in, user}) => {
                         </div>
                     </div>
                     <div id='company_name'>
-                        {user_is_logged_in && 'Das Grosse Arbenteur' }
+                        {'Das Grosse Arbenteur' }
                     </div>
                     {user_is_logged_in? 
                         <div className='flex_column'>
