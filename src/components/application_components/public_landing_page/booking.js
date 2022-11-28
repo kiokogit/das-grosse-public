@@ -24,7 +24,7 @@ const BookingPredefined = ( ) => {
      const {id} = useParams()
      useEffect(()=>{
          dispatch(get_package_for_booking(id))
-     }, [id])
+     }, [dispatch, id])
  
      const package_for_booking = useSelector(state=> state.package_for_booking)
 

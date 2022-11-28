@@ -6,10 +6,12 @@
     height:100%;
     margin-top: 2%;
     text-align: center;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .booking_container {
-    width:99%;
+    width:95%;
     min-height: max-content;
     border: 1px  rgb(157, 131, 81) solid;
     border-radius: 10px;

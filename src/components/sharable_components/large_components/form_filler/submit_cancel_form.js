@@ -1,3 +1,4 @@
+import { COMPANY_NAME } from "../../../../settings/constants"
 import { CancelBtn, SubmitBtn } from "../../small_components/buttons/buttons"
 
 import './forms.css'
@@ -8,7 +9,7 @@ export const SubmitCancelForm = ({fields, header, submitfn, cancelfn}) =>{
         <div>
             <form className="form">
                 <div id='company_name'>
-                    Das Grosse Arbenteur
+                    {COMPANY_NAME}
                 </div>
                 <div className="header_field">
                     {header}

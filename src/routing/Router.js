@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, useLocation} from 'react-router-dom'
 import { clear_short_error_action } from "../actions/error_actions"
 import { get_logged_in_user_profile } from "../actions/user_accounts_actions"
 
@@ -19,9 +19,11 @@ import { PublicHeader } from "../components/specific_components/public_header/pu
 import { SideBar } from "../components/specific_components/public_header/side_nav_bar"
 
 import './main.css'
+import { HOME_ROUTE } from "./routing_constants"
 
 export const Router = () =>{
     const dispatch = useDispatch()
+    const location = useLocation()
     const user_is_logged_in = useSelector(state =>state.logged_in_user_status)
     // get if user is logged in or not
     const logged_in_user_details = useSelector(state=> state.logged_in_user_details)
@@ -41,8 +43,9 @@ export const Router = () =>{
         }
     }, [dispatch, user_is_logged_in])
 
+
     return (
-        <div>
+        <div className={location.pathname.startsWith(HOME_ROUTE)? "home_window_background":"other_windows_background"}>
             <div className="main_component display_row_grids">
                 <div className="flex_grid main_content_container">
                     <SideBar user_is_logged_in={user_is_logged_in} />

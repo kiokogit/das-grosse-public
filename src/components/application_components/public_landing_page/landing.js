@@ -6,6 +6,7 @@ import { Home } from "./home_window"
 import { JourneyPlanner } from "./journey_planner"
 import { Packages } from "./packages"
 
+import './landing.css'
 
 export const Landing = ({mode}) =>{
     // set the current window

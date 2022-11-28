@@ -1,6 +1,7 @@
 // import { PackageManyCards } from "../../specific_components/package_list_card/package_many_cards"
 import { SearchComplete } from "../../specific_components/search_component_complete/search_with_dropdown"
 
+
 const packagess = [
     {
         "title":"Maasai Tour",
@@ -17,6 +18,7 @@ const packagess = [
 ]
 
 export const Home = () => {
+
     return(
         <div>
             <SearchComplete search_results={packagess}/>

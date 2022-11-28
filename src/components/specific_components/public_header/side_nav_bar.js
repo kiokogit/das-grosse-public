@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 import { ABOUT_ROUTE, BOOKING_ROUTE, CONTACT_ROUTE, HOME_ROUTE, PACKAGES_ROUTE, PLANNER_ROUTE } from "../../../routing/routing_constants"
 import { InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
 
+import image from './dga_logo.png'
 
 export const SideBar = () => {
 
@@ -11,7 +12,7 @@ export const SideBar = () => {
         <div className='sidebar'>
             <div className='flex_column'>
                 <div className='logo_section'>
-                    Logo and Name
+                    <img alt="" src={image}/>
                 </div>
                     <Link to={HOME_ROUTE} className={`nav_link ${pathname.startsWith(HOME_ROUTE) && 'current_nav'}`}>
                         <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Home'/>

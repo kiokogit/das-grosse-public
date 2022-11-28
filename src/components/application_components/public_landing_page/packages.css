@@ -1,11 +1,23 @@
+.landing_fun{
+    width: 100%;
+    height:100%;
+    display: grid;
+    grid-template-columns:repeat(5, auto);
+    grid-template-rows: 400px;
+    column-gap: 5px;
+    margin-top: 1cm;
+}
 
 .fun_box {
-    width:100%;
-    height: 10cm;
+    width:300px;
+    height: 300px;
     text-align: center;
     text-justify: newspaper;
     justify-items: center;
-    margin:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* margin:10px; */
     /* box-shadow: -5px 5px 5px 6px rgb(206, 206, 206); */
     border-radius: 15px;
     background-color: rgb(255, 255, 255);

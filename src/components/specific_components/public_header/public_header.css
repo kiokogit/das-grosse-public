@@ -6,7 +6,7 @@
     padding-left: 0.3cm;
     padding-right: 0.3cm;
     /* border-radius: 10px; */
-    box-shadow: 0px 3px 5px 3px rgb(206, 206, 206);
+    box-shadow: 0px 3px 5px 0px rgb(157, 131, 81);
 }
 
 .flexrow {
@@ -81,9 +81,9 @@
     left:0px;
     width:100%;
     height:max-content;
-    background-color:rgb(255, 255, 255);
+    /* background-color:rgb(255, 255, 255); */
     border-radius: 0px 0px 10px 0px;
-    padding-bottom: 2cm;
+    /* padding-bottom: 2cm; */
     /* border: 1px solid rgb(157, 131, 81); */
 
 }
@@ -95,6 +95,7 @@
     box-shadow: 5px 3px 5px 3px rgb(206, 206, 206);
     border-radius: 5px;
     margin-bottom: 6px;
+    background-color:rgb(255, 255, 255);
 }
 
 .nav_link:hover{
@@ -102,8 +103,17 @@
 }
 
 .logo_section {
-    height: 150px;
+    height: 200px;
     width: 100%;
+    background:none;
+    margin-bottom: 10px;
+}
+
+.logo_section img {
+    height: 100%;
+    width: 100%;
+    /* box-shadow: 5px 0px 5px 3px rgb(206, 206, 206); */
+    
 }
 
 .current_nav {

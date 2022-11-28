@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom'
 import { logout_public_user } from '../../../actions/user_accounts_actions';
 import { HOME_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE } from '../../../routing/routing_constants';
+import { COMPANY_NAME } from '../../../settings/constants';
 import {InvisibleBtn2 } from '../../sharable_components/small_components/buttons/buttons';
 
 import './public_header.css'
@@ -35,7 +36,7 @@ export const PublicHeader = ({ user_is_logged_in, user}) => {
                         </div>
                     </div>
                     <div id='company_name'>
-                        {'Das Grosse Arbenteur' }
+                        {COMPANY_NAME}
                     </div>
                     {user_is_logged_in? 
                         <div className='flex_column'>

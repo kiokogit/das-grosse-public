@@ -21,7 +21,7 @@ export default function DestinationLocation(){
     const {id} = useParams()
     useEffect(()=>{
         dispatch(get_package_detail_view(id))
-    })
+    }, [dispatch, id])
 
     const package_detail_view = useSelector(state=>state.package_detail_view)
     const package_pin =  package_detail_view.pin
@@ -35,7 +35,7 @@ export default function DestinationLocation(){
     // Important! Always set the container height explicitly
     <div className="map_box">
         <h3>
-            {package_detail_view.title}
+            {package_detail_view.title} map
         </h3>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "" }}
