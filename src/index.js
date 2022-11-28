@@ -21,7 +21,7 @@ const persistConfig = {
 }
 
 const persistedReducer = persistReducer(persistConfig, all_reducers)
-const data_store = createStore(persistedReducer, compose(applyMiddleware(thunk)))
+const data_store = createStore(persistedReducer, undefined, compose(applyMiddleware(thunk)))
 const persistor = persistStore(data_store)
 
 const Loading = () => {
@@ -33,9 +33,9 @@ const Loading = () => {
 root.render(
   <Provider store={data_store}>
     <PersistGate loading={<Loading />} persistor={persistor} >
-      <React.StrictMode>
+      <>
         <App />
-      </React.StrictMode>
+      </>
     </PersistGate>
   </Provider>
 );

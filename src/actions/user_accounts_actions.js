@@ -1,5 +1,6 @@
 
 import * as account_api from "../api/login_register_endpoints";
+import { server_500_error } from "./actions_constants";
 import { parse_alert_messages } from "./parse_alert_messages";
 
 
@@ -14,7 +15,7 @@ export const register_user_action = (user_details) => async(dispatch) => {
         if(error.response?.status === 400) {
             dispatch({type:'SHORT_ERROR_ALERT', payload:error.response.data.details}) 
         } else{
-            dispatch({type:'SHORT_ERROR_ALERT', payload: 'Cannot process your request at this time'})
+            dispatch({type:'SHORT_ERROR_ALERT', payload: server_500_error})
         }  
     }
 }
@@ -31,7 +32,7 @@ export const login_public_user = (credentials) => async(dispatch) => {
         if(error.response?.status === 400) {
             dispatch({type:'SHORT_ERROR_ALERT', payload:error.response.data.details}) 
         } else{
-            dispatch({type:'SHORT_ERROR_ALERT', payload: 'Cannot process your request at this time'})
+            dispatch({type:'SHORT_ERROR_ALERT', payload: server_500_error})
         } 
     }
 }
@@ -56,7 +57,7 @@ export const get_logged_in_user_profile = ( ) => async(dispatch) =>{
         if(error.response?.status === 400) {
             dispatch({type:'SHORT_ERROR_ALERT', payload:error.response.data.details}) 
         } else{
-            dispatch({type:'SHORT_ERROR_ALERT', payload: 'Cannot Fetch user profile at this time'})
+            dispatch({type:'SHORT_ERROR_ALERT', payload: server_500_error})
         } 
     }
 }

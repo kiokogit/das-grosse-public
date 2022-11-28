@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { BOOKING_ROUTE, PACKAGES_ROUTE } from "../../../routing/routing_constants"
-import { InvisibleBtn, InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
+import { InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
 
 import './package.css'
 
@@ -21,7 +21,7 @@ export const PackageList = ({pack}) =>{
                             <div className="package_details_only2">
                                 
                                 <div>
-                                    Location: {pack.location}{' for pin location, '} <a href="*">click here</a>
+                                    Location: {pack.location}{' for pin location, '} <a href={PACKAGES_ROUTE + '/'+pack.id+'/map'}>click here</a>
                                 </div>
                                 <div>
                                     Description: {pack.description}

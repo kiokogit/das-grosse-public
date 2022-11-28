@@ -11,7 +11,11 @@ export const packagess = [
         price:"300USD",
         id:"jiuhb889-uih0uh-njy6g7",
         likes:10,
-        package_type:'predefined'
+        package_type:'predefined',
+        pin:{
+            lat:1.4937,
+            lng:35.1446
+        }
     
     },
     {
@@ -24,7 +28,11 @@ export const packagess = [
         price:"800USD",
         id:"jiuhb889-uih0uh-njy6g7447",
         likes:5,
-        package_type:'predefined'
+        package_type:'predefined',
+        pin:{
+            lat:1.5177,
+            lng:37.2634
+        }
     
     },
     {
@@ -37,7 +45,11 @@ export const packagess = [
         price:"78USD",
         id:"jiuhb889-uih0uh-njy6g74471",
         likes:8,
-        package_type:'predefined'
+        package_type:'predefined',
+        pin:{
+            lat:-5.725856,
+            lng:39.3621
+        }
     
     },
     {
@@ -50,7 +62,11 @@ export const packagess = [
         price:"96USD",
         id:"8iuhb889-uih0uh-njy6g74471",
         likes:19,
-        package_type:'predefined'
+        package_type:'predefined',
+        pin:{
+            lat:2.3355,
+            lng:37.9943
+        }
     
     }
 

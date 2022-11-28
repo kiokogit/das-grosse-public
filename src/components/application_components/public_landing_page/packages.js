@@ -8,6 +8,7 @@ import { faqs } from "./packages_faqs_mock"
 
 import { packagess } from "./packages_list_data"
 import './packages.css'
+import DestinationLocation from "../../sharable_components/large_components/google_maps/google_map_plug"
 
 export const Packages = ({packages=packagess}) => {
     const [searchValue, setSearchValue] = useState('')
@@ -25,7 +26,8 @@ export const Packages = ({packages=packagess}) => {
                 <Route path="new" element={<AllPackages  packages={packages.filter(pack => pack.likes < 10)}/>} />
                 <Route path="frequent" element={<AllPackages  packages={packages.filter(pack=> pack.likes > 10)}/>} />
                 <Route path="faqs" element={<Faqs  qsns={faqs}/>} />
-                <Route path=":id" element={<PackageDetailView />} />
+                <Route path=":id/" element={<PackageDetailView />} />
+                <Route path=":id/map" element={<DestinationLocation />}/>
             </Routes>
             
         </div>
