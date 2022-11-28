@@ -99,7 +99,7 @@
 }
 
 .nav_link:hover{
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(216, 213, 213);
 }
 
 .logo_section {
@@ -117,7 +117,7 @@
 }
 
 .current_nav {
-    background-color: rgb(233, 232, 232);
+    background-color: rgb(202, 198, 198);
 }
 
 .guest {

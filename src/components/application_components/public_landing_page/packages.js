@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import { MinorHeader } from "../../specific_components/minor_header/minor_header"
 import { Faqs } from "../../specific_components/packages_components.js/packages_faqs"
@@ -12,14 +11,10 @@ import DestinationLocation from "../../sharable_components/large_components/goog
 import './packages.css'
 
 export const Packages = ({packages=packagess}) => {
-    const [searchValue, setSearchValue] = useState('')
     
     return (
         <div>
             <MinorHeader 
-            searchValue={searchValue} 
-            setSearchValue={setSearchValue} 
-            search_results={packages} 
                 />
             <Routes>
                 <Route path="" element={<PackagesLanding />} />

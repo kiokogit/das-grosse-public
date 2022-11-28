@@ -32,9 +32,6 @@ export const MinorHeader = ({searchValue, setSearchValue, search_results=[]}) =>
                 <div className='minor_search search_margin'>
                     <SearchInput 
                     placeholder={'Search available packages...'} 
-                    searchValue={searchValue}
-                    setSearchValue={setSearchValue}
-                    search_results={search_results}
                     />
                 </div>
         

@@ -1,16 +1,15 @@
 .landing_fun{
     width: 100%;
     height:100%;
-    display: grid;
-    grid-template-columns:repeat(5, auto);
-    grid-template-rows: 400px;
+    display: flex;
+    flex-wrap: wrap;
     column-gap: 5px;
     margin-top: 1cm;
 }
 
 .fun_box {
-    width:300px;
-    height: 300px;
+    max-width:300px;
+    max-height: 300px;
     text-align: center;
     text-justify: newspaper;
     justify-items: center;
@@ -21,4 +20,9 @@
     /* box-shadow: -5px 5px 5px 6px rgb(206, 206, 206); */
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
+}
+
+.fun_box img:hover {
+    background-color: rgb(157, 131, 81);
+    opacity: 40%;
 }
