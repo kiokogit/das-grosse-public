@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useLayoutEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Route, Routes, useParams } from "react-router-dom"
 import { get_package_for_booking } from "../../../actions/packages_actions"
@@ -22,7 +22,7 @@ const BookingPredefined = ( ) => {
 
      //  get package id from params
      const {id} = useParams()
-     useEffect(()=>{
+     useLayoutEffect(()=>{
          dispatch(get_package_for_booking(id))
      }, [dispatch, id])
  

@@ -47,6 +47,15 @@
     background-color: inherit;
 }
 
+.invisible_btn3 {
+    color:black;
+    border:none;
+    background-color: inherit;
+    margin:0px;
+    height: auto;
+    padding: 0px;
+}
+
 .menu_btn {
     color:black;
     border:none;

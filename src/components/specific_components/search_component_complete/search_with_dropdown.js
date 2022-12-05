@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { PACKAGES_ROUTE } from '../../../routing/routing_constants'
 import { SearchInput } from '../../sharable_components/large_components/floating_search_cards/search_input'
 import {InvisibleBtn2} from '../../sharable_components/small_components/buttons/buttons'
 
@@ -13,7 +15,9 @@ export const SearchComplete = ( )=>{
                 />
                 <p>or</p>
                 <p>
-                    <InvisibleBtn2 value={'Browse all available destinations'} className="submit_btn" />
+                    <Link to={PACKAGES_ROUTE+'/all'}>
+                        <InvisibleBtn2 value={'Browse all available destinations'} className="submit_btn" />
+                    </Link>
                 </p>
             </div>
         </div>

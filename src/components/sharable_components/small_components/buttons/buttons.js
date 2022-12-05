@@ -33,6 +33,13 @@ export const InvisibleBtn = ({switchValue, onClick}) => {
         </button>
     )
 }
+export const InvisibleBtn3 = ({switchValue, onClick}) => {
+    return (
+        <button className="btn invisible_btn3" onClick={onClick}>
+            {switchValue}
+        </button>
+    )
+}
 
 // invisible 2 - for single page navigation
 export const InvisibleBtn2 = ({value, onClick, className}) => {

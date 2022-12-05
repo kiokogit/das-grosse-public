@@ -31,7 +31,7 @@ export const Packages = ({packages=packagess}) => {
 }
 
 
-const AllPackages = ({packages}) => {
+export const AllPackages = ({packages}) => {
 
     return (
         <div>
