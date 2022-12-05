@@ -1,4 +1,4 @@
-import { Input, RadioInput} from '../../sharable_components/small_components/input_boxes/input_boxes'
+import { InputText, RadioInput} from '../../sharable_components/small_components/input_boxes/input_boxes'
 
 import './pages.css'
 
@@ -14,87 +14,80 @@ export const BookingPageTwo = (booking_details) => {
             country:"Kenya",
             county_state:"Nakuru",
             city_town:"Naivasha"
-        },
-        optional_identification: {
-            gender:"male",
-            age:"25",
-            disability_status:"N/A"
         }
     }
-    
+     
 
     return (
         <div>
             <h3>Applicant's Personal Details</h3>
-            <div className="column_grids_partition_equal spacing_between_elements">
-                <div className='border_right'>
-                    <h5>Contact Details</h5>
+            <div className="flex_column spacing_between_elements">
+                <div className=''>
+                    <div className='subsection_header'>
+                        <h5>Contact Details</h5>
+                    </div>
                     <div>
                     </div>
                     <div className='spacing_between_elements align_all_left'>
                         <div>
-                        {'Full Names *'}
+                        {'First Name *'}
                         </div>
-                        <Input type='text' placeholder='eg John Doe' />
+                        <InputText type='text' placeholder='eg John' />
+                        <div>
+                        {'Middle Name'}
+                        </div>
+                        <InputText type='text' placeholder='eg Doe' />
+                        <div>
+                        {'Last Name *'}
+                        </div>
+                        <InputText type='text' placeholder='eg Jung' />
                         <div>
                         {"Phone Number *"}
                         </div>
-                        <Input type='number' placeholder='eg 0706332554' />
+                        <InputText type='number' placeholder='eg 0706332554' />
                         <div>
                         {'Email *'}
                         </div>
-                        <Input type='text' placeholder='eg john.doe@example.com' />
+                        <InputText type='text' placeholder='eg john.doe@example.com' />
                         <div>
+                        <RadioInput name='travel_mode' 
+                                            type='checkbox' 
+                                            value='create_account' 
+                                            label='Create an account for me upon submission' />
+                        <div>
+                    <small><i>With a DGA account, you can track your booking through the various stages right on the journey planner tab</i></small>
+
+                        </div>
                         </div>
                     </div>
                 </div>
-                <div className='border_right'>
-                    <h5>Location Details</h5>
+                <div className=''>
+                    <div className='subsection_header'>
+                        <h5>Location Details</h5>
+                    </div>
                     <div className='align_all_left'>
                         <div>
                         {'Country *'}
                         </div>
-                        <Input type='text' placeholder='eg Kenya' />
+                        <InputText type='text' placeholder='eg Kenya' />
                         <div>
                         {"County/State"}
                         </div>
-                        <Input type='text' placeholder='eg Nakuru' />
+                        <InputText type='text' placeholder='eg Nakuru' />
                         <div>
                             {'City/Town'}
-                            <Input type='text' placeholder='eg Naivasha' />
+                            <InputText type='text' placeholder='eg Naivasha' />
                         </div>
                     </div>
                 </div>
-                <div className='border_left'>
-                    <h5>Optional Identification</h5>
-                    <small className='margin_around'><i>Help Us know how to address and identify you</i></small>
-                    <div className='align_all_left'>Gender</div>
-                    <div>
-                    <RadioInput name='gender' 
-                                type='radio' 
-                                value='male' 
-                                label='Male' />
-                        <RadioInput name='gender' 
-                                type='radio' 
-                                value='female'     
-                                label='Female' />
-                        <RadioInput name='gender' 
-                                type='radio' 
-                                value='other' 
-                                label='Other' />
-                        <RadioInput name='gender' 
-                                type='radio' 
-                                value='not_to_say' 
-                                label='Prefer not to Say' />
-                    </div>
-                    <div className='align_all_left'>Age</div>
-                    <Input type={'number'} />
-                    <div className='align_all_left'>Any physical disability</div>
-                    <Input type={'text'} placeholder='eg. Type or N/A'/>
-                </div>
             </div>
-            <div className='align_all_left spacing_between_elements'>
-                Prefered mode of payment *
+            {/* <div className='align_all_left spacing_between_elements'>
+                <div className='subsection_header'>
+                    <h5>Payment Preparation</h5>
+                </div>
+                <div>
+                    Preferred Mode of payment
+                </div>
             </div>
             <div className="column_grids_partition_equal_2">
                 <div className="flex_to_row">
@@ -121,7 +114,7 @@ export const BookingPageTwo = (booking_details) => {
                 </div>
                 <div className='align_all_left'>
                     <small><i>This is to help us set up the best method for later use</i></small>
-                </div>
+                </div> */}
                 <div className="spacing_between_elements"></div>
         </div>
     )

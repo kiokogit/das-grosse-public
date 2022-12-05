@@ -1,0 +1,90 @@
+
+.dash_item {
+    width: 3cm;
+    max-width: 5cm;
+    background-color: rgb(157, 131, 81, 20%);
+    border-radius: 50%;
+    height: 3cm;
+    max-height: 5cm;
+    align-items: center;
+    text-align: center;
+    padding: 5mm;
+    margin: 5mm;
+}
+
+.dash_item div{
+    margin-top: 0.9cm;
+}
+
+.grid_row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.margin_top {
+    margin-top: 2cm;
+    height: 50vh;
+}
+
+.table_headers{
+    padding:3mm;
+
+}
+
+.link :link, :visited {
+    text-decoration: none;
+    color: rgba(30, 29, 29, 0.3);
+    font-weight: 800;
+}
+
+.link :active {
+    color:rgb(157, 131, 81);
+}
+
+.table_full {
+    width: 90%;
+    height: max-content;
+    background-color:rgb(157, 131, 81, 10%) ;
+    margin-left: 5%;
+    margin-top: 0.5cm;
+    
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    background-color: rgb(159, 157, 157, 0.5);
+}
+
+.table_body {
+    padding: 0mm;
+}
+
+.tab_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    background-color: rgb(159, 157, 157, 0.1);
+    padding:1mm
+}
+
+.header2 {
+    font-weight: 600;
+    font-variant: small-caps;
+    padding: 2mm;
+    color: rgb(157, 131, 81);
+}
+
+.current {
+    background-color: rgb(157, 131, 81, 60%);
+}
+
+.current :link {
+    color: rgb(157, 131, 81);
+}

@@ -1,6 +1,9 @@
 import { useDispatch } from 'react-redux'
-import { Navigate } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { LOGIN_ROUTE } from '../../../routing/routing_constants'
+import { ListView } from '../../specific_components/journey_planner_components/list_view'
+import { UserDash } from '../../specific_components/journey_planner_components/user_dash'
+import { WishList } from '../../specific_components/journey_planner_components/wishlist'
 
 export const JourneyPlanner = ({user_is_logged_in}) => {
     const dispatch = useDispatch()
@@ -13,7 +16,12 @@ export const JourneyPlanner = ({user_is_logged_in}) => {
 
     return (
         <div>
-            Journey Planning app
+            <Routes>
+                <Route path='/' element={<UserDash />} />
+                <Route path='/applications' element={<ListView />}/>
+                <Route path='/wishlist' element={<WishList />} />
+            </Routes>
+            
         </div>
     )
 }

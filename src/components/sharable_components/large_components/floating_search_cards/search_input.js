@@ -22,9 +22,9 @@ export const SearchInput = ({placeholder}) => {
                 {search_results.length < 1 ? <i>No related search results</i>:
                 <div>
                     {search_results.map(value=>
-                        <div>
+                        <div className="column_grids_partition_equal_2">
                         <li key={value.id}>{value.title}</li> <Link to={PACKAGES_ROUTE + '/'+value.id}>
-                        View 
+                        View Package 
                     </Link>
                         </div>
                         )}

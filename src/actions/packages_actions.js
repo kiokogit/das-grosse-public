@@ -20,3 +20,18 @@ export const clear_package_for_booking = () => dispatch => {
 
     dispatch({type: 'CLEAR_PACKAGE_FOR_BOOKING', payload:{}})
 }
+
+export const get_booking_applications_list = (filter) => dispatch => {
+
+    dispatch({type: 'APPLICATIONS_LIST', payload:[]})
+}
+
+export const get_booking_application_detail = (id) => dispatch => {
+
+    dispatch({type: "APPLICAITON_DETAILS", payload:{}})
+}
+
+export const get_user_wishlist = () => dispatch => {
+
+    dispatch({type: 'WISHLIST', payload:packagess})
+}
