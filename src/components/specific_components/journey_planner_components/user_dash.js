@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { InvisibleBtn3 } from "../../sharable_components/small_components/buttons/buttons"
 import './planner.css'
 
 export const UserDash = () => {
@@ -8,7 +7,7 @@ export const UserDash = () => {
         <div className="grid_row margin_top">
             <Link to={'wishlist'} className='dash_item'>
                 <div>
-                        <InvisibleBtn3 switchValue={'My Wish List'} />
+                    {'My Wish List'}
                 </div>
             </Link>
             <Link to={'applications?filter=pending'} className='dash_item'>

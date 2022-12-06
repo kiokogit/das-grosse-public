@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { BOOKING_ROUTE, PACKAGES_ROUTE } from "../../../routing/routing_constants"
 import { InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
 
 import './package.css'
 
 export const PackageList = ({pack}) =>{
+    const location = useLocation()
     
     return (
         <div className='package_list_card'>
@@ -49,11 +50,12 @@ export const PackageList = ({pack}) =>{
                             <InvisibleBtn2 className={'submit_btn2'} value='Book Now' />
                         </Link>
                     </div>
+                    {!location.pathname.includes("wishlist")&& 
                     <div>
                         <Link to={'/none'}>
                             {'Add to wishlist'}
                         </Link>
-                    </div>
+                    </div>}
                 </div>
                 <div className="package_price">
                     {pack.price} /Person
