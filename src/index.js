@@ -9,8 +9,8 @@ import { applyMiddleware, compose, legacy_createStore as createStore } from 'red
 import thunk from 'redux-thunk';
 
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'
-// import storage from "redux-persist/es/storage/session"
+// import storage from 'redux-persist/lib/storage'
+import storage from "redux-persist/es/storage/session"
 import { PersistGate } from 'redux-persist/integration/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

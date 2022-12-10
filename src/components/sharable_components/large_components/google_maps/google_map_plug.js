@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 
 import './google_style.css'
 import { useDispatch, useSelector } from "react-redux";
-import { get_package_detail_view } from "../../../../actions/packages_actions";
+import { get_package_detail_view, get_package_location_pin } from "../../../../actions/packages_actions";
 import { useParams } from "react-router-dom";
 
 const AnyReactComponent = ({ text }) => 
@@ -20,11 +20,12 @@ export default function DestinationLocation(){
     const dispatch = useDispatch()
     const {id} = useParams()
     useEffect(()=>{
+        dispatch(get_package_location_pin(id))
         dispatch(get_package_detail_view(id))
     }, [dispatch, id])
 
+    const package_pin = useSelector(state=>state.package_location_pin)
     const package_detail_view = useSelector(state=>state.package_detail_view)
-    const package_pin =  package_detail_view.pin
 
   const defaultProps = {
     center: package_pin,

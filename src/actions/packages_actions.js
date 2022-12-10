@@ -8,7 +8,7 @@ export const get_package_detail_view = (id) => dispatch => {
 
 export const get_package_location_pin = (id) => dispatch => {
 
-    dispatch({type: 'PACKAGE_LOCATION_PIN', payload:packagess.filter(p=>p.id===id)[0]})
+    dispatch({type: 'PACKAGE_LOCATION_PIN', payload:packagess.filter(p=>p.id===id)[0].pin})
 }
 
 export const get_package_for_booking = (id) => dispatch => {

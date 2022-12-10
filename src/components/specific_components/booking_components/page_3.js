@@ -1,14 +1,18 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
-import { InputNumber } from "../../sharable_components/small_components/input_boxes/input_boxes"
+import { InputNumber, RadioInput } from "../../sharable_components/small_components/input_boxes/input_boxes"
 
 
-export const BookingPageThree = ({user}) => {
+export const BookingPageThree = ({booking_details}) => {
+    const [verify_email, setVerifyEmail] = useState(false)
+    const [verify_phone, setPhone] = useState(false)
 
         // if user.contacts.is_email_verified, no verification required.
     return (
         <div>
             <h3>Verify Contact Details</h3>
+            <small><i>You must verify at least one of the contacts to submit your booking</i></small>
             <div className="align_all_left spacing_between_elements">
             <div className="spacing_between_elements">
                 <div className='subsection_header'>
@@ -16,16 +20,27 @@ export const BookingPageThree = ({user}) => {
                 </div>
             </div>
             <div className="spacing_between_elements">
-                <div>{'kioko@email.com'}
-                <InputNumber placeholder={'Enter OTP code here...'} type='text'/>
-                </div>
                 
-                <Link to={''}>
-                    <InvisibleBtn2 value={'Get OTP'} className='submit_btn'/>
-                </Link>
-                <Link to={''}>
-                    <InvisibleBtn2 value={'Verify'} className='submit_btn' />
-                </Link>
+                 <RadioInput name='travel_mode' 
+                                            type='checkbox' 
+                                            value='verify_email' 
+                                            label='Verify Email'
+                                            setValue={e=> setVerifyEmail(!verify_email)}
+                                            /> 
+                {verify_email && 
+                    <div>
+                        <div>{booking_details?.contacts?.email}
+                            <InputNumber placeholder={'Enter OTP code here...'} type='text'/>
+                        </div>
+                        <Link to={''}>
+                            <InvisibleBtn2 value={'Get OTP'} className='submit_btn'/>
+                        </Link>
+                        <Link to={''}>
+                            <InvisibleBtn2 value={'Verify'} className='submit_btn' />
+                        </Link>
+                    </div>
+                }
+                
             </div>
             <div className="spacing_between_elements">
                 <div className='subsection_header'>
@@ -33,7 +48,15 @@ export const BookingPageThree = ({user}) => {
                 </div>
             </div>
             <div className="spacing_between_elements">
-                <div>{'+254703618918'}
+            <RadioInput name='travel_mode' 
+                                            type='checkbox' 
+                                            value='verify_email' 
+                                            label='Verify Phone Number'
+                                            setValue={e=> setPhone(!verify_phone)}
+                                            /> 
+                {verify_phone && 
+                <div>
+                <div>{booking_details?.contacts?.phone_number}
                 <InputNumber placeholder={'Enter OTP code here...'} type='text'/>
                 </div>
                 <div>
@@ -44,6 +67,7 @@ export const BookingPageThree = ({user}) => {
                         <InvisibleBtn2 value={'Verify'} className='submit_btn' />
                     </Link>
                 </div>
+                </div>}
             </div>
         </div>
         </div>

@@ -17,7 +17,7 @@ export const Booking = () => {
     )
 }
 
-const BookingPredefined = ( ) => {
+const BookingPredefined = ({user} ) => {
     const dispatch = useDispatch()
 
      //  get package id from params

@@ -24,11 +24,11 @@ export const InputDate = ({placeholder, type, name, label, onChange}) => {
         </div>
     )
 }
-export const InputText = ({placeholder, type, name, label, onChange}) => {
+export const InputText = ({placeholder, value, name, label, onChange}) => {
     return (
         <div className='display_inline'>
             {label && <div>{label}</div>}
-            <input name={name} type={'text'} contentEditable={false} className="input margin_around small_input_text" placeholder={placeholder} onChange={e=>onChange(e)} />
+            <input name={name} type={'text'} value={value} contentEditable={false} className="input margin_around small_input_text" placeholder={placeholder} onChange={e=>onChange(e)} />
         </div>
     )
 }

@@ -67,7 +67,7 @@ export const Router = () =>{
                             <Route path='home' element={<Home />} />
                             <Route path='packages/*' element={<Packages/>} />
                             <Route path='about' element={<AboutUs />} />
-                            <Route path='booking/*' element={<Booking />} />
+                            <Route path='booking/*' element={<Booking user_is_logged_in={user_is_logged_in} user={logged_in_user_details} />} />
                             <Route path={`journey_planner/*`} element={<JourneyPlanner user_is_logged_in={user_is_logged_in} />} />
                             <Route path='contact_us' element={<ContactUs />} />
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import {useDispatch, useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
-import { get_package_detail_view } from "../../../actions/packages_actions"
+import { get_package_detail_view, get_package_location_pin } from "../../../actions/packages_actions"
 import { BOOKING_ROUTE } from "../../../routing/routing_constants"
 import DestinationLocation from "../../sharable_components/large_components/google_maps/google_map_plug"
 import { InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
@@ -12,11 +12,14 @@ export const PackageDetailView = () => {
 
     const dispatch = useDispatch()
     const {id} = useParams()
+    console.log(id)
     useEffect(()=>{
         dispatch(get_package_detail_view(id))
+        dispatch(get_package_location_pin(id))
     })
 
     const package_detail_view = useSelector(state=>state.package_detail_view)
+    console.log(package_detail_view)
 
     return (
         <div className="detail_body">

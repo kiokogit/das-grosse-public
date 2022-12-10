@@ -8,10 +8,13 @@ import { BookingPageOne } from "./page_1"
 import { BookingPageThree } from "./page_3"
 import { BookingPageTwo } from "./page_2"
 import { BookingPageFour } from "./page_4"
+import { useSelector } from "react-redux"
 
 
 export const MainContainer = ({package_for_booking}) => {
     const [page_no, setPage_no] = useState(1)
+
+    const user = useSelector(state=> state.logged_in_user)
 
     const [booking_details, setBookingDetails]  = useState({
         destination:{...package_for_booking}
@@ -27,9 +30,19 @@ export const MainContainer = ({package_for_booking}) => {
                         booking_details={booking_details} 
                         setBookingDetails={setBookingDetails}
                         />}
-                        {page_no===2 && <BookingPageTwo />}
-                        {page_no===3 && <BookingPageThree />}
-                        {page_no===4 && <BookingPageFour />}
+                        {page_no===2 && <BookingPageTwo 
+                        booking_details={booking_details} 
+                        setBookingDetails={setBookingDetails} 
+                        user={user}
+                        />}
+                        {page_no===3 && <BookingPageThree 
+                        booking_details={booking_details} 
+                        setBookingDetails={setBookingDetails}
+                        />}
+                        {page_no===4 && <BookingPageFour 
+                        booking_details={booking_details} 
+                        setBookingDetails={setBookingDetails} 
+                        />}
                     </div>
                     <div className="flex_space_between">
                         <small><i>* - required fields </i></small>

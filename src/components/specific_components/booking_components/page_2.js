@@ -1,22 +1,29 @@
-import { InputText, RadioInput} from '../../sharable_components/small_components/input_boxes/input_boxes'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Input, InputText, InputVariant, RadioInput} from '../../sharable_components/small_components/input_boxes/input_boxes'
 
 import './pages.css'
 
-export const BookingPageTwo = (booking_details) => {    
+export const BookingPageTwo = ({booking_details, setBookingDetails}) => {  
+    const user_is_logged_in = useSelector(state =>state.logged_in_user_status)
+    const user = useSelector(state=>state.logged_in_user_details)
+    const [use_my_profile, setUseProfile] = useState(false)
+    const [create_account, setCreateAccount] = useState(false)
+    const [contact_details, setContactDetails] = useState({})
+    const [new_account_details, setNewAccountDetails] = useState({...contact_details})
+
     booking_details = {
         ...booking_details,
-        contacts: {
-            full_names:"Kioko Vincent",
-            phone_number:"0703618918",
-            email:"kiokovincent12@gmail.com"
-        },
         location: {
             country:"Kenya",
             county_state:"Nakuru",
             city_town:"Naivasha"
         }
     }
-     
+
+    useEffect(()=>{
+        setBookingDetails({...booking_details, contacts:{...contact_details}})
+    }, [contact_details])
 
     return (
         <div>
@@ -30,34 +37,70 @@ export const BookingPageTwo = (booking_details) => {
                     </div>
                     <div className='spacing_between_elements align_all_left'>
                         <div>
+                            {user_is_logged_in &&  <RadioInput name='travel_mode' 
+                                            type='checkbox' 
+                                            value='use_my_details' 
+                                            label='Use My Profile details'
+                                            setValue={e=> {
+                                                setUseProfile(!use_my_profile)
+                                                setContactDetails({...user})
+                                            }}
+                                            /> }
+                        <div>
+                            </div>
+                       
+                        </div>
+                        <div>
                         {'First Name *'}
                         </div>
-                        <InputText type='text' placeholder='eg John' />
+                        <InputText type='text' value={contact_details?.first_name} placeholder={'eg Joe'}
+                        onChange={(e)=>setContactDetails({...contact_details, first_name:e.target.value})} />
                         <div>
                         {'Middle Name'}
                         </div>
-                        <InputText type='text' placeholder='eg Doe' />
+                        <InputText type='text' value={contact_details?.middle_name} placeholder='eg Doe'
+                        onChange={(e)=>setContactDetails({...contact_details, middle_name:e.target.value})} />
                         <div>
                         {'Last Name *'}
                         </div>
-                        <InputText type='text' placeholder='eg Jung' />
+                        <InputText type='text' value={contact_details?.last_name} placeholder='eg Jung'
+                        onChange={(e)=>setContactDetails({...contact_details, last_name:e.target.value})} />
                         <div>
                         {"Phone Number *"}
                         </div>
-                        <InputText type='number' placeholder='eg 0706332554' />
+                        <InputText type='number' value={contact_details?.phone_number} placeholder='eg 0706332554'
+                        onChange={(e)=>setContactDetails({...contact_details, phone_number:e.target.value})} />
                         <div>
                         {'Email *'}
                         </div>
-                        <InputText type='text' placeholder='eg john.doe@example.com' />
+                        <InputText type='text' value={contact_details?.email} placeholder='eg john.doe@example.com'
+                        onChange={(e)=>setContactDetails({...contact_details, email:e.target.value})} />
                         <div>
+                        {!user_is_logged_in && <div>
                         <RadioInput name='travel_mode' 
                                             type='checkbox' 
                                             value='create_account' 
-                                            label='Create an account for me upon submission' />
+                                            label='Create an account for me upon submission' 
+                                            setValue={e=>setCreateAccount(!create_account)}
+                                            />
                         <div>
                     <small><i>With a DGA account, you can track your booking through the various stages right on the journey planner tab</i></small>
 
+                        </div> </div>}
+                        {create_account &&
+                        <div>
+                            <div>
+                            {'Password *'}
+                            </div>
+                            <InputVariant type='password' value={new_account_details?.password} placeholder='Create a password'
+                            setValue={e=> setNewAccountDetails({...new_account_details, password:e.target.value})} />
+                            <div>
+                            {'Confirm Password *'}
+                            </div>
+                            <InputVariant type='password' value={new_account_details?.password} placeholder='Confirm the above password' 
+                            setValue={e=> setNewAccountDetails({...new_account_details, confirm_password:e.target.value})}/>
                         </div>
+                        }
                         </div>
                     </div>
                 </div>

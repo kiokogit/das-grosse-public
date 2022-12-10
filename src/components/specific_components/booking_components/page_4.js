@@ -1,5 +1,5 @@
 
-export const BookingPageFour = ({booking_details = {}}) => {
+export const BookingPageFour = ({booking_details}) => {
 
     return (
         <div className='spacing_between_elements'>
@@ -65,13 +65,13 @@ export const BookingPageFour = ({booking_details = {}}) => {
                         FRST NAME
                     </div>
                     <div className="table_content">
-                        {"ABABU"}
+                        {booking_details?.contacts?.first_name}
                     </div>
                     <div className="table_header">
                         OTHER NAMES
                     </div>
                     <div className="table_content">
-                        {"NA MWAMBA"}
+                        {booking_details?.contacts?.last_name}
                     </div>
                 </div>
                 <div className="table_all">
@@ -79,7 +79,7 @@ export const BookingPageFour = ({booking_details = {}}) => {
                         PHONE NUMBER
                     </div>
                     <div className="table_content">
-                        {"Phone Number"}
+                    {booking_details?.contacts?.phone_number}
                     </div>
                     <div className="table_header">
                         PHONE NUMBER IS VERIFIED
@@ -93,7 +93,7 @@ export const BookingPageFour = ({booking_details = {}}) => {
                         EMAIL
                     </div>
                     <div className="table_content">
-                        {"My Email"}
+                    {booking_details?.contacts?.email}
                     </div>
                     <div className="table_header">
                         EMAIL IS VERIFIED
