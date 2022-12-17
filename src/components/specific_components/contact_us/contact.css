@@ -4,15 +4,19 @@
     height: fit-content;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
     text-align: left;
     margin: 1%;
 }
 
+.flex_to_row_buttons input{
+    margin-bottom: 10px;
+}
 
 
 .contact_form {
-    width: 100%;
+    min-width: 300px;
     max-width: 500px;
     height: max-content;
     margin: 0.1cm;
@@ -23,4 +27,32 @@
 
 .align_right {
     text-align: right;
+}
+
+.table_all_contact {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 1%;
+    border: 1px solid rgb(205, 203, 203, 30%);
+    max-width: fit-content;
+    
+}
+
+.table_header_contact {
+    padding: 10px;
+    background-color:rgb(205, 203, 203, 30%) ;
+    min-width: 150px;
+    max-width: 280px;
+    max-height: max-content;
+}
+
+.table_content_contact {
+    padding: 10px;
+    min-width: 150px;
+    max-width: 280px;
+}
+
+.query form {
+
 }

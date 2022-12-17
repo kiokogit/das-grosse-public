@@ -13,15 +13,20 @@ import './packages.css'
 export const Packages = ({packages=packagess}) => {
     
     return (
-        <div>
-            <MinorHeader 
-                />
+        <div className="packages_main">
+            <h3>Travel Packages</h3>
+            <div className="minor_header_packs">
+                <MinorHeader />
+                <div className="back_button" onClick={e=>window.history.back()}>
+                    {'<<Back'}
+                </div>
+            </div>
             <Routes>
                 <Route path="" element={<PackagesLanding />} />
                 <Route path="all" element={<AllPackages  packages={packages}/>} />
                 <Route path="new" element={<AllPackages  packages={packages.filter(pack => pack.likes < 10)}/>} />
                 <Route path="frequent" element={<AllPackages  packages={packages.filter(pack=> pack.likes > 10)}/>} />
-                <Route path="faqs" element={<Faqs  qsns={faqs}/>} />
+                {/* <Route path="faqs" element={<Faqs  qsns={faqs}/>} /> */}
                 <Route path=":id/" element={<PackageDetailView />} />
                 <Route path=":id/map" element={<DestinationLocation />}/>
             </Routes>
@@ -77,14 +82,14 @@ export const PackagesLanding = () => {
                     When shall it all happen to be good
                 </p>
             </div>
-            <div  className="fun_box">
+            {/* <div  className="fun_box">
                 <div>
                     <img alt="" src="https://lh3.googleusercontent.com/p/AF1QipManNY3TC1SyqCggTlWxlty2g9xDeLRCgzeFZP5=s1280-p-no-v1" />
                 </div>
                 <p>
                     Then all is well
                 </p>
-            </div>
+            </div> */}
         </div>
     )
 }

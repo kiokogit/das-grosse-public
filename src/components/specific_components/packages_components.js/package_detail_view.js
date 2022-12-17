@@ -27,49 +27,73 @@ export const PackageDetailView = () => {
                 <div>
                     {package_detail_view.title}
                 </div>
-                <div>
+                {/* <div>
                 <Link to={BOOKING_ROUTE+'/predefined/'+package_detail_view.id}>
                         <InvisibleBtn2 className={'submit_btn2'} value='Book Now' />
                 </Link>
-            </div>
+            </div> */}
             </div>
             <div className="detail_components">
                 <div className="text_details">
-                    <h4>
-                        {package_detail_view.description}
-                    </h4>
                     <div className="gallery_image">
                         <img alt="" src={package_detail_view.cover_image}/>
                     </div>
-                    <h4>
-                        {package_detail_view.contains}
-                    </h4>
-                    <h4>
-                        {package_detail_view.details}
-                    </h4>
-                    <h2>
-                        Price: {package_detail_view.price}
-                    </h2>
-                </div>
-                <div className="location_details">
-                    <DestinationLocation />
                 </div>
                 <div>
+                    <p>
+                        {package_detail_view.description}
+                    </p>
+                    <p>
+                        {package_detail_view.contains}
+                    </p>
+                    <p>
+                        {package_detail_view.details}
+                    </p>
+                    
+                </div>
+                {/* <div className="location_details">
+                    <DestinationLocation />
+                </div> */}
+                <div>
+
                     <div>
                         <h3>
-                            Gallery
+                            Available Price Ranges
                         </h3>
+                        <div>
+                            <p>
+                                Price per person: {package_detail_view.price}
+                            </p>
+                            <p>
+                                Price per group of 3: {Number(package_detail_view.price.slice(0,-3)) + 450}{package_detail_view.price.slice(-3)}
+                            </p>
+                        </div>
                     </div>
-                    <div className="gallery_details">
-                    
-                    {package_detail_view.gallery?.map(img =>
-                        <div key={img.image} className="gallery_images">
-                            <img className="gallery_image" alt="" src={img.image} />
-                            <div>
-                                {img.name}
+                    <div>
+                        <h3>
+                            Itinirary
+                        </h3>
+                        <div>
+                            {'none'}
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>
+                                Gallery
+                            </h3>
+                        </div>
+                        <div className="gallery_details">
+                        
+                        {package_detail_view.gallery?.map(img =>
+                            <div key={img.image} className="gallery_images">
+                                <img className="gallery_image" alt="" src={img.image} />
+                                <div>
+                                    {img.name}
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -43,7 +43,7 @@ export const PackageList = ({pack}) =>{
                     </Link>
                 </div>
             </div>
-            <div className="package_action_buttons">
+            {/* <div className="package_action_buttons">
                 <div>
                     <div>
                         <Link to={BOOKING_ROUTE+'/predefined/'+pack.id}>
@@ -60,7 +60,7 @@ export const PackageList = ({pack}) =>{
                 <div className="package_price">
                     {pack.price} /Person
                 </div>
-            </div>
+            </div> */}
             {/* <div className="package_my_cost_price"> */}
                 {/* <div className="package_my_cost">
                     CALCULATE MY COST

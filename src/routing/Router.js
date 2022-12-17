@@ -11,10 +11,12 @@ import { ContactUs } from "../components/application_components/public_landing_p
 import { Home } from "../components/application_components/public_landing_page/home_window"
 import { JourneyPlanner } from "../components/application_components/public_landing_page/journey_planner"
 import { Packages } from "../components/application_components/public_landing_page/packages"
+import { faqs } from "../components/application_components/public_landing_page/packages_faqs_mock"
 import { LoginRegister } from "../components/application_components/user_login_register/login_register"
 import { ErrorSuccessBar } from "../components/sharable_components/small_components/alerts/fail_success_bars"
 import { BreadCrumbs } from "../components/sharable_components/small_components/breadcrumbs/breadcrumbs"
 import { Footer } from "../components/specific_components/footer/Footer"
+import { Faqs } from "../components/specific_components/packages_components.js/packages_faqs"
 import { PublicHeader } from "../components/specific_components/public_header/public_header"
 import { SideBar } from "../components/specific_components/public_header/side_nav_bar"
 
@@ -31,6 +33,14 @@ export const Router = () =>{
             setOpensidebar(false)
         }
       });
+      window.addEventListener('scroll', function(e){   
+        if (document.getElementById('side_bar').contains(e.target)){
+            // scroll the box
+            setOpensidebar(true)
+          } else{
+              setOpensidebar(false)
+          }
+  });
     const dispatch = useDispatch()
     const location = useLocation()
     const user_is_logged_in = useSelector(state =>state.logged_in_user_status)
@@ -90,6 +100,7 @@ export const Router = () =>{
                                     {/* <Route path='booking/*' element={<Booking user_is_logged_in={user_is_logged_in} user={logged_in_user_details} />} /> */}
                                     {/* <Route path={`journey_planner/*`} element={<JourneyPlanner user_is_logged_in={user_is_logged_in} />} /> */}
                                     <Route path='contact_us' element={<ContactUs />} />
+                                    <Route path="faqs" element={<Faqs qsns={faqs}/>} />
 
                                     {/* not found route */}
                                     <Route path='*' element={<div>Sorry, Page moved</div>} />

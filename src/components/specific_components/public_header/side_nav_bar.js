@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { Link, useLocation } from "react-router-dom"
 import { logout_public_user } from "../../../actions/user_accounts_actions"
-import { ABOUT_ROUTE, BOOKING_ROUTE, CONTACT_ROUTE, HOME_ROUTE, LOGIN_ROUTE, PACKAGES_ROUTE, PLANNER_ROUTE, REGISTER_ROUTE } from "../../../routing/routing_constants"
+import { ABOUT_ROUTE, BOOKING_ROUTE, CONTACT_ROUTE, FAQS_ROUTE, HOME_ROUTE, LOGIN_ROUTE, PACKAGES_ROUTE, PLANNER_ROUTE, REGISTER_ROUTE } from "../../../routing/routing_constants"
 import { InvisibleBtn2 } from "../../sharable_components/small_components/buttons/buttons"
 
 import image from './dga_logo.png'
@@ -46,9 +46,12 @@ export const SideBar = ({user_is_logged_in}) => {
                 <Link to={ABOUT_ROUTE} className={`nav_link ${pathname.startsWith(ABOUT_ROUTE) && 'current_nav'}`}>
                     <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='About Us' />
                 </Link>
-                <Link className="nav_link" onMouseOver={e=> setShowMore(true)} onMouseOut={e=>setShowMore(false)}>
-                    <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='More >' />
+                <Link to={FAQS_ROUTE} className={`nav_link ${pathname.startsWith(FAQS_ROUTE) && 'current_nav'}`}>
+                    <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='FAQs' />
                 </Link>
+                {/* <Link className="nav_link" onMouseOver={e=> setShowMore(true)} onMouseOut={e=>setShowMore(false)}>
+                    <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='More >' />
+                </Link> */}
                 {showMore &&
                 <div onMouseOver={e=> setShowMore(true)} onMouseOut={e=>setShowMore(false)}>
                 {user_is_logged_in? 

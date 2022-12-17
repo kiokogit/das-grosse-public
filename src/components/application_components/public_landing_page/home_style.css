@@ -1,3 +1,29 @@
+.company_details #company_name{
+  font-size: 400%;
+  font-weight: 900;
+}
+
+.tag_line{
+  font-weight: 600;
+  font-style: italic;
+  font-size: larger;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.company_details{
+  padding-top:15%
+}
+
+.company_details .tag_line{
+  margin: 5px;
+  font-size: 200%;
+}
+
+@media (max-width: 850px) {
+  .company_details{
+    font-size: 100%;
+  }
+}
 
 .searchhomecontainer {
     /* background-image: url("none"); */
@@ -17,7 +43,7 @@
 
 .landing_images {
     background:url(../../../../public/images/kingbysize.jpg);
-    animation: chbg 100s infinite alternate;
+    animation: chbg 20s infinite alternate;
   }
   @keyframes chbg {
     0% {
@@ -50,6 +76,7 @@
   .top_destinations {
     height: max-content;
     width: 100%;
+    margin-top: 10%;
   }
 
   .destination_card {
@@ -57,13 +84,25 @@
     height: max-content;
     min-height: 300px;
     box-shadow: 2px 0px 2px 0px rgb(67, 67, 66);
-    margin:5px;
+    margin:15px;
     background-color: white;
+    border-radius: 10px;
   }
 
   .destination_card img {
     width:100%;
-    height:300px
+    height:300px;
+    border-radius: 10px;
+  }
+  
+  .destination_card:hover {
+    background-color: rgb(157, 131, 81, 90%);
+    color: white;
+    cursor: pointer;
+  }
+
+  .destination_card:hover img {
+    opacity: 50%;
   }
 
 .destination_cards_flex {
@@ -96,7 +135,7 @@
   width: 100%;
   min-height: 300px;
   margin: 10px;
-  margin-top: 20%;
+  margin-top: 10%;
   max-height: max-content;
 }
 
@@ -115,16 +154,6 @@
   max-width: 300px;
 }
 
-.tag_line{
-  font-weight: 600;
-  font-style: italic;
-  font-size: larger;
-  font-family: monospace;
-}
-
-.company_details{
-  padding:20%
-}
 
 .why_us_reasons img {
   width:100px;
@@ -132,7 +161,13 @@
 }
 
 .search_complete_home{
-  margin-top: 3rem;
+  margin-top: 1cm;
+}
+
+.more_button_card{
+  position:relative;
+  /* opacity: 20%; */
+  height: 100%;
 }
 
 
@@ -140,5 +175,39 @@
     width: 300px;
     height: 200px;
     padding-top: 100px;
+    background-color: rgb(87, 85, 85, 80%);
+    /* opacity: 90%; */
+    position: absolute;
+    border-radius: 10px;
+    top: 0px;
   }
 
+  .destination_browse_button:hover{
+    background-color: rgb(87, 85, 85, 90%);
+  }
+
+
+  .about_us_center{
+    margin-top: 10%;
+    text-align: center;
+    
+  }
+
+  .reviews_landing{
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  .contact_card_landing {
+    min-width: 300px;
+    height: max-content;
+    min-height: 300px;
+    box-shadow: 2px 0px 2px 0px rgb(67, 67, 66);
+    margin:15px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .offers_home{
+    margin-top: 10%;
+  }
