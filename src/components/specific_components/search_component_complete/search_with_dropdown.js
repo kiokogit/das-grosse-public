@@ -13,12 +13,12 @@ export const SearchComplete = ( )=>{
                 <SearchInput 
                 placeholder='Search for destinations or packages here...' 
                 />
-                <p>or</p>
+                {/* <p>or</p>
                 <p>
                     <Link to={PACKAGES_ROUTE+'/all'}>
                         <InvisibleBtn2 value={'Browse all available destinations'} className="submit_btn" />
                     </Link>
-                </p>
+                </p> */}
             </div>
         </div>
     )

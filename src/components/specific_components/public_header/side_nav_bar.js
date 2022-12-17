@@ -32,9 +32,9 @@ export const SideBar = ({user_is_logged_in}) => {
                 <Link to={PACKAGES_ROUTE} className={`nav_link ${pathname.startsWith(PACKAGES_ROUTE) && 'current_nav'}`}>
                     <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Packages' />
                 </Link>
-                <Link to={BOOKING_ROUTE} className={`nav_link ${pathname.startsWith(BOOKING_ROUTE) && 'current_nav'}`}>
+                {/* <Link to={BOOKING_ROUTE} className={`nav_link ${pathname.startsWith(BOOKING_ROUTE) && 'current_nav'}`}>
                     <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Booking' />
-                </Link>
+                </Link> */}
                 {user_is_logged_in && 
                 <Link to={PLANNER_ROUTE} className={`nav_link ${pathname.startsWith(PLANNER_ROUTE) && 'current_nav'}`}>
                     <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Journey Planner' />

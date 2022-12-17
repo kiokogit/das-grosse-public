@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import {Routes, Route, useLocation} from 'react-router-dom'
@@ -22,6 +22,15 @@ import './main.css'
 import { HOME_ROUTE } from "./routing_constants"
 
 export const Router = () =>{
+    const [opensidebar, setOpensidebar] = useState(false)
+    window.addEventListener('click', function(e){   
+        if (document.getElementById('side_bar_button').contains(e.target)){
+          // Clicked in box
+          setOpensidebar(true)
+        } else{
+            setOpensidebar(false)
+        }
+      });
     const dispatch = useDispatch()
     const location = useLocation()
     const user_is_logged_in = useSelector(state =>state.logged_in_user_status)
@@ -45,39 +54,48 @@ export const Router = () =>{
 
 
     return (
-        <div className={location.pathname.startsWith(HOME_ROUTE)? "home_window_background":"other_windows_background"}>
+        <div>
             <div className="main_component display_row_grids">
-                <div className="flex_grid main_content_container">
-                    <SideBar user_is_logged_in={user_is_logged_in} />
-                    <div>
-                    <PublicHeader user_is_logged_in={user_is_logged_in} user={logged_in_user_details} />
-                    {/* alert messages */}
-                    {short_alert && <ErrorSuccessBar message={short_alert.message} alert_type={short_alert.alert_type}/>}
-                                        
-                    {/* breadcrumbs */}
-                    <div className="pad_left pad_top">
-
-                    {user_is_logged_in && <BreadCrumbs />}
-                    {/* routes */}
-                    <div>
-                        <Routes>
-                            <Route path="login" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'login'}/>}/>
-                            <Route path="register" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'register'} />} />
-                            <Route path="reset_password" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'reset_password'} />} />
-
-                            <Route path='home' element={<Home />} />
-                            <Route path='' element={<Home />} />
-                            <Route path='packages/*' element={<Packages/>} />
-                            <Route path='about' element={<AboutUs />} />
-                            <Route path='booking/*' element={<Booking user_is_logged_in={user_is_logged_in} user={logged_in_user_details} />} />
-                            <Route path={`journey_planner/*`} element={<JourneyPlanner user_is_logged_in={user_is_logged_in} />} />
-                            <Route path='contact_us' element={<ContactUs />} />
-
-                            {/* not found route */}
-                            <Route path='*' element={<div>Sorry, Page moved</div>} />
-                        </Routes>
+                <div className="flex_grid_main main_content_container">
+                    <div id="side_bar" className={`side_bar ${opensidebar && 'floating_side_bar'}`}>
+                        <SideBar user_is_logged_in={user_is_logged_in} setOpensidebar={setOpensidebar}/>
                     </div>
-                    </div>
+                    <div className="all_objects_stretch">
+                        <div className="top_bar">
+                            <PublicHeader 
+                                user_is_logged_in={user_is_logged_in} 
+                                user={logged_in_user_details} 
+                                setOpensidebar={setOpensidebar} 
+                                opensidebar={opensidebar} 
+                            />
+                        </div>
+                        {/* alert messages */}
+                        {short_alert && <ErrorSuccessBar message={short_alert.message} alert_type={short_alert.alert_type}/>}
+                                            
+                        {/* breadcrumbs */}
+                        <div className="">
+
+                            {user_is_logged_in && <BreadCrumbs />}
+                            {/* routes */}
+                            <div className="components_stretch">
+                                <Routes>
+                                    <Route path="login" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'login'}/>}/>
+                                    <Route path="register" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'register'} />} />
+                                    <Route path="reset_password" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'reset_password'} />} />
+
+                                    <Route path='home' element={<Home />} />
+                                    <Route path='' element={<Home />} />
+                                    <Route path='packages/*' element={<Packages/>} />
+                                    <Route path='about' element={<AboutUs />} />
+                                    {/* <Route path='booking/*' element={<Booking user_is_logged_in={user_is_logged_in} user={logged_in_user_details} />} /> */}
+                                    {/* <Route path={`journey_planner/*`} element={<JourneyPlanner user_is_logged_in={user_is_logged_in} />} /> */}
+                                    <Route path='contact_us' element={<ContactUs />} />
+
+                                    {/* not found route */}
+                                    <Route path='*' element={<div>Sorry, Page moved</div>} />
+                                </Routes>
+                            </div>
+                        </div>
                     </div>
                     <div className="footer_sticky">
                         <Footer />  

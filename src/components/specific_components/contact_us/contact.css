@@ -2,10 +2,11 @@
 .contact_body{
     width: 96%;
     height: fit-content;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: left;
-    margin: 1cm;
+    margin: 1%;
 }
 
 
@@ -14,7 +15,7 @@
     width: 100%;
     max-width: 500px;
     height: max-content;
-    margin: 0.5cm;
+    margin: 0.1cm;
     border: 1px solid rgb(157, 131, 81);
     border-radius: 10px;
 

@@ -49,41 +49,41 @@ export const AllPackages = ({packages}) => {
 }
 
 
-const PackagesLanding = () => {
+export const PackagesLanding = () => {
 
     return (
         <div className="landing_fun">
             <div className="fun_box">
                 <div>
-                    <img alt="" style={{width:"90%", height:"90%"}} src="https://posanlab.files.wordpress.com/2015/10/travel-flyer.jpg" />
+                    <img alt="" src="https://posanlab.files.wordpress.com/2015/10/travel-flyer.jpg" />
                 </div>
-                <h3>
+                <p>
                     How about a night camping this Christmas?
-                </h3>
+                </p>
             </div>
             <div className="fun_box">
                 <div>
-                    <img alt="" style={{width:"90%", height:"90%"}} src="https://img.freepik.com/free-vector/vacation-tours-travel-agency-flyer-design-template_83728-3094.jpg" />
+                    <img alt="" src="https://img.freepik.com/free-vector/vacation-tours-travel-agency-flyer-design-template_83728-3094.jpg" />
                 </div>
-                <h3>
+                <p>
                     What would you do if you were never scared?
-                </h3>
+                </p>
             </div>
             <div  className="fun_box">
                 <div>
-                    <img alt="" style={{width:"100%", height:"100%"}} src="https://images.ctfassets.net/x0s5vw77vftn/ew_article_fid5805_asset/451be76839559d7f4f51ee3538495931/63390-adrenaline.jpg" />
+                    <img alt="" src="https://images.ctfassets.net/x0s5vw77vftn/ew_article_fid5805_asset/451be76839559d7f4f51ee3538495931/63390-adrenaline.jpg" />
                 </div>
-                <h3>
+                <p>
                     When shall it all happen to be good
-                </h3>
+                </p>
             </div>
             <div  className="fun_box">
                 <div>
-                    <img alt="" style={{width:"90%", height:"90%"}} src="https://lh3.googleusercontent.com/p/AF1QipManNY3TC1SyqCggTlWxlty2g9xDeLRCgzeFZP5=s1280-p-no-v1" />
+                    <img alt="" src="https://lh3.googleusercontent.com/p/AF1QipManNY3TC1SyqCggTlWxlty2g9xDeLRCgzeFZP5=s1280-p-no-v1" />
                 </div>
-                <h3>
+                <p>
                     Then all is well
-                </h3>
+                </p>
             </div>
         </div>
     )

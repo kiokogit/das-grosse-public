@@ -2,12 +2,24 @@
 body{
     scrollbar-width: none;
     font-size: 90%;
+    background-color: rgb(157, 131, 81, 5%);
+    width: 100%;
 }
 
 .flex_grid {
-    display:grid;
+    display:flex;
     grid-template-columns: 0.5fr 4fr;
-    justify-content: flex-start;
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    flex: 0 0 100%;
+}
+.flex_grid_main {
+    display:flex;
+    /* grid-template-columns: 0.5fr 4fr; */
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    /* flex: 0 0 100%; */
+    flex-grow: 1;
 }
 
 .main_component {
@@ -26,7 +38,8 @@ body{
     position: absolute;
     bottom: 0;
     width: 100%;
-    max-height:15rem;
+    min-height:3rem;
+    height: max-content;
 }
 
 body::-webkit-scrollbar {
@@ -34,7 +47,7 @@ body::-webkit-scrollbar {
 }
 
 .centered_div {
-    margin-top:2rem;
+    margin-top:0rem;
 }
 
 .pad_left {
@@ -44,39 +57,32 @@ body::-webkit-scrollbar {
     padding-top: 20px;
 }
 
-/* home window background
-.home_window_background {
-    background:url(https://www.discoverafrica.com/wp-content/uploads/2021/11/hippo-in-lake-naivasha-2.jpg);
-    animation: chbg 100s infinite alternate;
-  }
-  @keyframes chbg {
-    0% {
-      background:url(https://www.discoverafrica.com/wp-content/uploads/2021/11/hippo-in-lake-naivasha-2.jpg);
-    background-size:cover
-    }
-    20% {
-      background:url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/80/2b/f6/lake-naivasha-country.jpg?w=600&h=400&s=1);
-    background-size:cover
-    }
-    40% {
-      background:url(https://kaylantravel.com/wp-content/uploads/2020/11/Naivasha-2.jpg);
-    background-size:cover
-    }
-    60% {
-      background:url("https://www.treehugger.com/thmb/NoIeKCs1Bkd2CQq3iSg2nSRATWc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/lions-on-savanna-56a09a753df78cafdaa327a6.jpg");
-    background-size:cover
-    }
-    80% {
-      background:url("https://static.dw.com/image/18679726_403.jpg");
-    background-size:cover
-    }
-    100% {
-      background:url("https://easyscienceforkids.com/wp-content/uploads/2013/05/savanna_grassland-e1449490213490.jpg");
-    background-size:cover
-    }
-  } */
+.logo_section img {
+  filter: drop-shadow(3px 0 0 rgb(157, 131, 81))
+}
 
-  .other_windows_background .logo_section img {
-    filter: drop-shadow(3px 0 0 rgb(157, 131, 81))
+.side_bar{
+  min-width: 200px;
+}
 
+.top_bar{
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+    .side_bar {
+      position: absolute;
+      display: none;
+    }
   }
+
+.floating_side_bar{
+    position:absolute;
+    top: 0px;
+    display: block;
+}
+
+.all_objects_stretch{
+  width: 100%;
+  min-height: 100vh;
+}
