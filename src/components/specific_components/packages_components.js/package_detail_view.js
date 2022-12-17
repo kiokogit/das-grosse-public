@@ -12,14 +12,12 @@ export const PackageDetailView = () => {
 
     const dispatch = useDispatch()
     const {id} = useParams()
-    console.log(id)
     useEffect(()=>{
         dispatch(get_package_detail_view(id))
         dispatch(get_package_location_pin(id))
     })
 
     const package_detail_view = useSelector(state=>state.package_detail_view)
-    console.log(package_detail_view)
 
     return (
         <div className="detail_body">
@@ -65,7 +63,7 @@ export const PackageDetailView = () => {
                                 Price per person: {package_detail_view.price}
                             </p>
                             <p>
-                                Price per group of 3: {Number(package_detail_view.price.slice(0,-3)) + 450}{package_detail_view.price.slice(-3)}
+                                Price per group of 3: {Number(package_detail_view?.price?.slice(0,-3)) + 450}{package_detail_view?.price?.slice(-3)}
                             </p>
                         </div>
                     </div>

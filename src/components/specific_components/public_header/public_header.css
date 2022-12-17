@@ -83,6 +83,7 @@
     width:100%;
     height:max-content;
     background-color:rgb(255, 255, 255);
+    
     /* border-radius: 0px 0px 10px 0px; */
     padding-bottom: 0.5cm;
     border-right: 1px solid rgb(157, 131, 81);
@@ -106,7 +107,6 @@
 .logo_section {
     height: 200px;
     width: 100%;
-    background:none;
     margin-bottom: 10px;
 }
 
@@ -118,7 +118,7 @@
 }
 
 .current_nav {
-    background-color: rgb(202, 198, 198, 20%);
+    background-color: rgb(202, 198, 198, 40%);
     /* border-right: 0.5px solid rgb(157, 131, 81); */
 
 }

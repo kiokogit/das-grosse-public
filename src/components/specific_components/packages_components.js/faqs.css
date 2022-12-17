@@ -11,9 +11,9 @@
 }
 
 .faq_qsn {
-    background-color: rgb(245, 243, 243);
+    background-color: rgb(222, 222, 222, 80%);
     font-weight: 700;
-    padding: 5px;
+    padding: 15px;
     cursor: pointer;
     margin: 10px;
 }
@@ -25,7 +25,7 @@
 }
 
 .faq_ans {
-    background-color: white;
+    /* background-color: white; */
     padding: 5px;
     margin:10px;
     font-size: 90%;

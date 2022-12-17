@@ -9,22 +9,7 @@ import { PACKAGES_ROUTE } from "../../../../routing/routing_constants"
 export const SearchInput = ({placeholder}) => {
     const [searchValue, setSearchValue] = useState('')
     const search_results=packagess.filter(pack=> pack.title.includes(searchValue) || pack.description.includes(searchValue) || pack.location.includes(searchValue) || pack.details.includes(searchValue))
-    window.addEventListener('scroll', function(e){ 
-        if (document.getElementById('search_elements').contains(e.target)){
-            // Clicked in box
-            setSearchValue(searchValue)
-          } else{
-              setSearchValue('')
-          }  
-      });
-      window.addEventListener('click', function(e){   
-        if (document.getElementsByClassName('click_listen').contains(e.target)){
-          // Clicked in box
-          setSearchValue(searchValue)
-        } else{
-            setSearchValue('')
-        }
-      });
+    
     return (
         <div  id="search_elements" className="search_complete">
             <div className="search_container">

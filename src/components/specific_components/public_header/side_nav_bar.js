@@ -24,7 +24,7 @@ export const SideBar = ({user_is_logged_in}) => {
         <div className='sidebar'>
             <div className='flex_column'>
                 <div className='logo_section'>
-                    {/* <img alt="" src={image}/> */}
+                    <img alt="" src={image}/>
                 </div>
                 <Link to={HOME_ROUTE} className={`nav_link ${pathname.startsWith(HOME_ROUTE) && 'current_nav'}`}>
                     <InvisibleBtn2 className={'menu_btn side_bar_btn'} value='Home'/>
