@@ -57,23 +57,26 @@ export const Router = () =>{
                     {/* breadcrumbs */}
                     <div className="pad_left pad_top">
 
-                    <BreadCrumbs />
+                    {user_is_logged_in && <BreadCrumbs />}
                     {/* routes */}
+                    <div>
                         <Routes>
                             <Route path="login" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'login'}/>}/>
                             <Route path="register" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'register'} />} />
                             <Route path="reset_password" element={<LoginRegister user_is_logged_in={user_is_logged_in} mode={'reset_password'} />} />
 
                             <Route path='home' element={<Home />} />
+                            <Route path='' element={<Home />} />
                             <Route path='packages/*' element={<Packages/>} />
                             <Route path='about' element={<AboutUs />} />
                             <Route path='booking/*' element={<Booking user_is_logged_in={user_is_logged_in} user={logged_in_user_details} />} />
                             <Route path={`journey_planner/*`} element={<JourneyPlanner user_is_logged_in={user_is_logged_in} />} />
                             <Route path='contact_us' element={<ContactUs />} />
 
-                        {/* not found route */}
-                        <Route path='*' element={<div>Sorry, Page moved</div>} />
-                    </Routes>
+                            {/* not found route */}
+                            <Route path='*' element={<div>Sorry, Page moved</div>} />
+                        </Routes>
+                    </div>
                     </div>
                     </div>
                     <div className="footer_sticky">
