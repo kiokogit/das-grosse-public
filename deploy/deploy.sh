@@ -3,7 +3,7 @@
 DEPLOY_SERVER=$DEPLOY_SERVER
 SERVER_FOLDER="html-folder-in-server"
 
-# Building React output for the sake of the project
+# Building React output for the sake of the projectb
 yarn install
 yarn run build
 
