@@ -17,7 +17,7 @@ deploy:
   stage: deploy
   environment:
     name: staging
-    url: dasgrosseDGA.com
+    url: http://dasgrosseDGA.com
   script:
     - bash deploy/deploy.sh
   only:
