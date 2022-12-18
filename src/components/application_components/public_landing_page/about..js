@@ -1,20 +1,8 @@
 import { useState } from "react"
 
 import './about.css'
-const about_info2 = [
-    {
-        "id":235,
-        "title":"History",
-        "text":"This is the history of Das Arbenteur"
-    },
-    {
-        "id":236,
-        "title":"Location",
-        "text":"We are located at the base of the fire for the sake of making everything hot. \n We are quite friendly. Come to Kayole for better deals every day for all the good that can be. Enjoy on your coming"
-    }
-]
 
-export const AboutUs = ({about_info =about_info2}) => {
+export const AboutUs = ({about_info=[]}) => {
     
     return (
         <div className="centered_div">

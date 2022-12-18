@@ -1,0 +1,12 @@
+
+.center_error {
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.error_title {
+    font-size: large;
+    font-weight: bold;
+}

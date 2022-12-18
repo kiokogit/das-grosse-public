@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import {Routes, Route, useLocation} from 'react-router-dom'
 import { clear_short_error_action } from "../actions/error_actions"
 import { get_logged_in_user_profile } from "../actions/user_accounts_actions"
+import { Error404 } from "../components/application_components/error_boundary/Error404"
 
 import { AboutUs } from "../components/application_components/public_landing_page/about."
 import { Booking } from "../components/application_components/public_landing_page/booking"
@@ -19,6 +20,7 @@ import { Footer } from "../components/specific_components/footer/Footer"
 import { Faqs } from "../components/specific_components/packages_components.js/packages_faqs"
 import { PublicHeader } from "../components/specific_components/public_header/public_header"
 import { SideBar } from "../components/specific_components/public_header/side_nav_bar"
+import { about_info } from "../settings/about_info"
 
 import './main.css'
 import { HOME_ROUTE } from "./routing_constants"
@@ -96,14 +98,14 @@ export const Router = () =>{
                                     <Route path='home' element={<Home />} />
                                     <Route path='' element={<Home />} />
                                     <Route path='packages/*' element={<Packages/>} />
-                                    <Route path='about' element={<AboutUs />} />
+                                    <Route path='about' element={<AboutUs about_info={about_info} />} />
                                     {/* <Route path='booking/*' element={<Booking user_is_logged_in={user_is_logged_in} user={logged_in_user_details} />} /> */}
                                     {/* <Route path={`journey_planner/*`} element={<JourneyPlanner user_is_logged_in={user_is_logged_in} />} /> */}
                                     <Route path='contact_us' element={<ContactUs />} />
                                     <Route path="faqs" element={<Faqs qsns={faqs}/>} />
 
                                     {/* not found route */}
-                                    <Route path='*' element={<div>Sorry, Page moved</div>} />
+                                    <Route path='*' element={<Error404 />} />
                                 </Routes>
                             </div>
                         </div>
