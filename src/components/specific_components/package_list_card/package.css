@@ -3,3 +3,114 @@
     display: inline;    
     justify-items: left;
 }
+
+.package_list_card{
+    max-width:100%;
+    min-width: 300px;
+    margin-left: 0px;
+    height:max-content;
+    border: 0.5px solid rgb(206, 206, 206);
+    background-color: white;
+    border-radius: 10px;
+    /* display: grid; */
+    padding: 5px;
+    /* grid-template-columns: 5fr 1fr; */
+    /* justify-content: space-between; */
+    margin-bottom: 15px;
+}
+
+.package_details_section {
+    display: block;
+}
+
+.package_details_no_reviews {
+    display: block;
+}
+
+.package_title_buttons {
+    height: max-content;
+}
+
+.package_action_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.package_details_only{
+    word-wrap: break-word;
+    /* font-size: small; */
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* grid-template-columns: 1fr 3fr; */
+    /* justify-content: left; */
+    
+}
+
+.package_details_only2 div{
+    margin: 0.5em;
+}
+
+.cover_image_list{
+    min-width: 300px;
+    max-width: 500px;
+    height:300px;
+}
+.cover_image_list img{
+    width: 100%;
+    height:100%;
+    /* position: relative; */
+
+}
+
+.package_title {
+    font-weight: 700;
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin:3px;
+    letter-spacing: 2px;
+}
+
+.package_reviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: small;
+    accent-color: grey;
+}
+
+.package_my_cost_price {
+    display: block;
+}
+
+.package_my_cost {
+    display:block;
+}
+
+.package_my_cost_data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: x-small;
+}
+
+.package_price {
+    font-size: medium;
+    color: rgb(121, 28, 28);
+}
+
+#book_btn{
+    width:max-content;
+    min-width: none;
+    padding:4px;
+    border: 1px rgb(157, 131, 81);
+    border-radius: 4px;
+    font-variant: small-caps;
+    margin:5px;
+    height:1.8rem;
+    background-color: rgb(157, 131, 81);
+    color: white;
+    min-width: 4rem;
+}

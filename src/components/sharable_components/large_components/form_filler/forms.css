@@ -1,18 +1,22 @@
 
 .form{
     padding:10px;
-    border: 0.5px solid black;
+    border: 0.5px solid rgb(157, 131, 81);
     border-radius: 4px;
     width: fit-content;
     min-width: 300px;
     height:max-content;
+    background-color: rgb(157, 131, 81) ;
 }
 
+
 .fields_field{
-    background-color: white;
     max-width: 95%;
 }
 
+.form #company_name {
+    padding-bottom:1cm;
+}
 .buttons_field {
     display: flex;
     flex-direction: row;

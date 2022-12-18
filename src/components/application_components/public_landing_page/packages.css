@@ -1,0 +1,58 @@
+
+.packages_main{
+  padding-left: 1%;
+}
+
+.fun_box img:hover {
+    background-color: rgb(157, 131, 81);
+    opacity: 40%;
+}
+
+.fun_box{
+    width: 300px;
+    height: max-content;
+    min-height: 300px;
+    box-shadow: 2px 0px 2px 0px rgb(67, 67, 66);
+    margin:15px;
+    background-color: white;
+    border-radius: 10px;
+
+  }
+
+  .fun_box img {
+    width:100%;
+    height:300px;
+    border-radius: 10px;
+
+  }
+
+.landing_fun {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+    /* text-align: center; */
+    margin-top: 1cm;
+    /* align-items: center; */
+}
+
+@media (max-width: 850px) {
+  .landing_fun {
+    justify-content: center;
+  }
+}
+
+
+.minor_header_packs{
+  margin-bottom: 5%;
+}
+
+
+.back_button{
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.back_button:hover{
+  color:  rgb(157, 131, 81);
+}

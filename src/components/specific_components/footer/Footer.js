@@ -4,8 +4,8 @@ export const Footer = () =>{
 
     return (
         <div className="footer_body padding_top">
-            <div className="flexrow padding_bottom">
-                <div>
+            <div className="flexrow_footing padding_bottom">
+                <div className='footing_item'>
                     <div className='titles'>
                         Das Grosse
                     </div>
@@ -19,7 +19,7 @@ export const Footer = () =>{
                         Partner with us
                     </div>
                 </div>
-                <div>
+                <div className='footing_item'>
                     <div className='titles'>
                         Home
                     </div>
@@ -33,7 +33,7 @@ export const Footer = () =>{
                         Maps and Navigation
                     </div>
                 </div>
-                <div>
+                <div className='footing_item'>
                     <div className='titles'>
                         Info
                     </div>
@@ -50,7 +50,7 @@ export const Footer = () =>{
                         Review our site
                     </div>
                 </div>
-                <div>
+                <div className='footing_item'>
                     <div className='titles'>
                         Available
                     </div>

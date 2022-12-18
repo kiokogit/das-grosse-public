@@ -3,21 +3,29 @@ import { Input } from "../../sharable_components/small_components/input_boxes/in
 
 import './login.css'
 
-export const Login = () => {
-
+export const Login = ({submitaction, credentials, setCredentials, oncancel}) => {
+    
     return (
         <div className="center_all">
             <SubmitCancelForm 
                 header={'User Login'}
-                submitfn={onsubmit}
+                submitfn={submitaction}
                 cancelfn={oncancel}
                 fields= {(
                     <div>
                         <div>
-                            <Input placeholder={'Enter Email Address'} />
+                            <Input 
+                            placeholder={'Enter Email Address'} 
+                            type='email' 
+                            onChange={e=> setCredentials({...credentials, email:e.target.value})} 
+                            />
                         </div>
                         <div>
-                            <Input placeholder={'Password'} />
+                            <Input 
+                            placeholder={'Password'} 
+                            type='password' 
+                            onChange={e=> setCredentials({...credentials, password:e.target.value})}
+                            />
                         </div>
                     </div>
                 )}

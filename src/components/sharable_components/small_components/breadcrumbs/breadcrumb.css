@@ -1,0 +1,10 @@
+
+.breadcrumb_is_active {
+    color: #000000;
+    text-decoration-line: none;
+}
+
+.breadcrumb_not_active {
+    color: #cccccc;
+    text-decoration-line: none;
+}

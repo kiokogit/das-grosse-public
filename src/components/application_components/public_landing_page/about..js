@@ -1,13 +1,8 @@
+import { useState } from "react"
 
-const about_info2 = [
-    {
-        "id":235,
-        "title":"History",
-        "text":"This is the history of Das Arbenteur"
-    }
-]
+import './about.css'
 
-export const AboutUs = ({about_info =about_info2}) => {
+export const AboutUs = ({about_info=[]}) => {
     
     return (
         <div className="centered_div">
@@ -15,9 +10,8 @@ export const AboutUs = ({about_info =about_info2}) => {
             <div>
                 {about_info.length > 0 && 
                 about_info.map(info => (
-                    <div key={info.id}> 
-                        <h5>{info.title}</h5>
-                        <p>{info.text}</p>
+                    <div key={info.id} className='about_container'> 
+                    <AboutQsn info={info} />
                     </div>
                 ))
                 }
@@ -26,3 +20,24 @@ export const AboutUs = ({about_info =about_info2}) => {
     )
 }
 
+
+const AboutQsn = ({info}) => {
+
+    const [showAbout, setShowAbout] = useState(false)
+
+    return (
+        <div>
+<div className="about_qsn flex_row_about" onClick={e=> setShowAbout(!showAbout)}>
+                    <div>
+                        {info.title}
+                    </div>
+                    <div>
+                        {showAbout? '-':"+"}
+                        </div>
+                    </div>
+                <div className={`about_ans ${showAbout? '':'hidden_about'}`}>
+                    {info.text}
+                    </div>
+        </div>
+    )
+}

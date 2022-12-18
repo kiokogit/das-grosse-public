@@ -1,0 +1,36 @@
+
+.faq_container {
+    border-left: 0.1px solid grey;
+    width: 90%;
+    height:max-content;
+    /* border-radius: 10px; */
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+}
+
+.faq_qsn {
+    background-color: rgb(222, 222, 222, 80%);
+    font-weight: 700;
+    padding: 15px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.flex_row_qsn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.faq_ans {
+    /* background-color: white; */
+    padding: 5px;
+    margin:10px;
+    font-size: 90%;
+}
+
+.hidden_ans {
+    display:none;
+}

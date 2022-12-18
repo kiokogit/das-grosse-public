@@ -27,11 +27,24 @@ input[type='text'] {
     border-radius: 4px;
     border: 1px solid  rgb(157, 131, 81);
 }
+input[type='password'] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid  rgb(157, 131, 81);
+}
+input[type='email'] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid  rgb(157, 131, 81);
+}
 input[type='number'] {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 4px;
     border: 1px solid  rgb(157, 131, 81);
+    max-width: 2rem;
 }
 input[type='date'] {
     margin-top: 1rem;
@@ -50,14 +63,37 @@ input[type='date'] {
 .small_input {
     padding:4px;
     height:1.5rem;
-    min-width: 4rem;
+    min-width: 2rem;
     max-width: 90%;
     font-size: 0.9rem;
+}
+.small_input_number{
+    padding:4px;
+    height:1.5rem;
+    min-width: 6cm;
+    font-size: 0.9rem;
+    max-width:8cm
+}
+
+.small_input_date{
+    padding:4px;
+    height:1.5rem;
+    min-width: 6cm;
+    font-size: 0.9rem;
+    max-width:8cm
+}
+.small_input_text{
+    padding:4px;
+    height:1.5rem;
+    min-width: 300px;
+    font-size: 0.9rem;
+    max-width:100%;
 }
 
 .text_area {
     margin-top: 0.5rem;
-    width: 90%;
+    max-width: 100%;
+    min-width: 300px;
     height:6rem;
     resize:none;
     font-family: inherit;
@@ -66,5 +102,5 @@ input[type='date'] {
 }
 
 .text_area_container{
-    margin-top:2rem
+    margin-top:1rem
 }

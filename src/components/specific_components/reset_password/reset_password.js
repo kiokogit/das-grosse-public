@@ -3,7 +3,7 @@ import { Input } from "../../sharable_components/small_components/input_boxes/in
 
 import './resetPass.css'
 
-export const ResetPassword = () => {
+export const ResetPassword = ({onsubmit, oncancel}) => {
 
     return (
         <div className="center_all">
@@ -14,7 +14,7 @@ export const ResetPassword = () => {
                 fields= {(
                     <div>
                         <div>
-                            <Input placeholder={'Enter Email Address'} />
+                            <Input placeholder={'Enter Email Address'} type='text'/>
                         </div>
                     </div>
                 )}

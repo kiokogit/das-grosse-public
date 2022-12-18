@@ -2,13 +2,23 @@ import { useState } from "react"
 import { PagerCrumbs } from "./pager_crumb"
 
 import './booking_main.css'
+
 import { NextPreviousBtns } from "./next_previous_buttons"
 import { BookingPageOne } from "./page_1"
 import { BookingPageThree } from "./page_3"
+import { BookingPageTwo } from "./page_2"
+import { BookingPageFour } from "./page_4"
+import { useSelector } from "react-redux"
 
 
-export const MainContainer = () => {
+export const MainContainer = ({package_for_booking}) => {
     const [page_no, setPage_no] = useState(1)
+
+    const user = useSelector(state=> state.logged_in_user)
+
+    const [booking_details, setBookingDetails]  = useState({
+        destination:{...package_for_booking}
+    })    
 
     return (
         <div className="whole_page" >
@@ -16,13 +26,26 @@ export const MainContainer = () => {
                 <div>
                     <PagerCrumbs page_no={page_no} setPage_no={setPage_no}/>
                     <div>
-                        {page_no===1 && <BookingPageOne />}
-                        {page_no===2 && 'Page 2'}
-                        {page_no===3 && <BookingPageThree />}
-                        {page_no===4 && 'Page 4'}
+                        {page_no===1 && <BookingPageOne 
+                        booking_details={booking_details} 
+                        setBookingDetails={setBookingDetails}
+                        />}
+                        {page_no===2 && <BookingPageTwo 
+                        booking_details={booking_details} 
+                        setBookingDetails={setBookingDetails} 
+                        user={user}
+                        />}
+                        {page_no===3 && <BookingPageThree 
+                        booking_details={booking_details} 
+                        setBookingDetails={setBookingDetails}
+                        />}
+                        {page_no===4 && <BookingPageFour 
+                        booking_details={booking_details} 
+                        setBookingDetails={setBookingDetails} 
+                        />}
                     </div>
                     <div className="flex_space_between">
-                        <small>* - required fields</small>
+                        <small><i>* - required fields </i></small>
                         <NextPreviousBtns current_page={page_no} last_page={4} setPage_no={setPage_no} submit={{}} />
                     </div>
 
