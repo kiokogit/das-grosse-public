@@ -6,7 +6,7 @@ import { PackageList } from "../../specific_components/package_list_card/package
 import { faqs } from "./packages_faqs_mock"
 
 import { packagess } from "./packages_list_data"
-import DestinationLocation from "../../sharable_components/large_components/google_maps/google_map_plug"
+// import DestinationLocation from "../../sharable_components/large_components/google_maps/google_map_plug"
 
 import './packages.css'
 
@@ -28,7 +28,7 @@ export const Packages = ({packages=packagess}) => {
                 <Route path="frequent" element={<AllPackages  packages={packages.filter(pack=> pack.likes > 10)}/>} />
                 {/* <Route path="faqs" element={<Faqs  qsns={faqs}/>} /> */}
                 <Route path=":id/" element={<PackageDetailView />} />
-                <Route path=":id/map" element={<DestinationLocation />}/>
+                {/* <Route path=":id/map" element={<DestinationLocation />}/> */}
             </Routes>
             
         </div>

@@ -22,7 +22,8 @@ export const PackageList = ({pack}) =>{
                             <div className="package_details_only2">
                                 
                                 <div>
-                                    Location: {pack.location}{' for pin location, '} <a href={PACKAGES_ROUTE + '/'+pack.id+'/map'}>click here</a>
+                                    Location: {pack.location}{' for pin location, '} 
+                                    {/* <a href={PACKAGES_ROUTE + '/'+pack.id+'/map'}>click here</a> */}
                                 </div>
                                 <div>
                                     Description: {pack.description}
