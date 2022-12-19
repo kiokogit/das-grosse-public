@@ -22,7 +22,7 @@ deploy:
     # - bash deploy/deploy.sh
     # for deployment to heroku
     # - npm install dpl
-    - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/das-grosse-public.git HEAD:main
+    - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/das-grosse-public.git staging
     - echo "Deployed to staging server"
   only:
     - staging
