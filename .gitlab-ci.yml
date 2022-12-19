@@ -19,6 +19,7 @@ deploy:
     name: staging
     url: example.com
   script:
-    - bash deploy/deploy.sh
+    # - bash deploy/deploy.sh
+    - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY
   only:
     - staging
