@@ -1,5 +1,5 @@
 
-export const HOST_SERVER = 'http://localhost:5001/'
+export const HOST_SERVER = 'http://backend.com/'
 export const API_VERSION = ''
 export const COMPANY_NAME = "Das Große Abenteuer"
 export const TAG_LINE = "Where adventure comes to life"
