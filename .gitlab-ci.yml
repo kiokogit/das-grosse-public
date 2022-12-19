@@ -17,7 +17,7 @@ deploy:
   stage: deploy
   environment:
     name: staging
-    url: example.com
+    url: https://das-grosse-public.herokuapp.com/
   script:
     # - bash deploy/deploy.sh
     # for deployment to heroku
