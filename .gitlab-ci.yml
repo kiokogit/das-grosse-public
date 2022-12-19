@@ -20,6 +20,7 @@ deploy:
     url: example.com
   script:
     # - bash deploy/deploy.sh
+    - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY
   only:
     - staging
